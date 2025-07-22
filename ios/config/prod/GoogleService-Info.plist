@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBeQZP4Vrmqt3wDX2N_5oVQ9n_IaiqgPY8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>285154967207</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.acacia.app</string>
+	<key>PROJECT_ID</key>
+	<string>acacia--prod</string>
+	<key>STORAGE_BUCKET</key>
+	<string>acacia--prod.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:285154967207:ios:804d55b798d7f398e8a582</string>
+</dict>
+</plist>

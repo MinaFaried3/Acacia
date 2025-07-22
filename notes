@@ -31,8 +31,8 @@ info@glow.net.sa
 
 dart run build_runner build --delete-conflicting-outputs
 
-flutter clean
-flutter pub get
+fvm flutter clean
+fvm flutter pub get
 rm -Rf ios/Pods
 rm -Rf ios/.symlinks
 rm -Rf ios/Flutter/Flutter.framework
@@ -66,4 +66,4 @@ flutter run --release --flavor dev --target lib/main_dev.dart
 flutter run --release --flavor prod --target lib/main_prod.dart
 
 flutter run  --flavor prod --target lib/main_prod.dart
-flutter run  --flavor dev --target lib/main_dev.dart
+fvm flutter run  --flavor dev --target lib/main_dev.dart
