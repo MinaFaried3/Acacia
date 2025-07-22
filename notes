@@ -1,0 +1,69 @@
+
+
+
+
+
+network errors like connections fails
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  //load assets before run
+  ByteData data = await PlatformAssetBundle().load('assets/ca/lets-encrypt-r3.pem');
+  SecurityContext.defaultContext.setTrustedCertificatesBytes(data.buffer.asUint8List());
+
+  runApp(MyApp());
+}
+
+
+
+
+//dev
+flutterfire configure \--project=speed-service-dev \--out=lib/firebase_options_dev.dart \--ios-bundle-id=com.acacia.app.dev \--android-app-id=com.acacia.app.dev
+
+
+flutterfire configure \--project=acacia--prod \--out=lib/firebase_options.dart \--ios-bundle-id=com.acacia.app \--android-package-name=com.acacia.app
+
+flutterfire configure \--project=acacia--dev \--out=lib/firebase_options_dev.dart \--ios-bundle-id=com.acacia.app.dev \--android-package-name=com.acacia.app.dev
+
+info@glow.net.sa
+
+dart run build_runner build --delete-conflicting-outputs
+
+flutter clean
+flutter pub get
+rm -Rf ios/Pods
+rm -Rf ios/.symlinks
+rm -Rf ios/Flutter/Flutter.framework
+rm -Rf ios/Flutter/Flutter.podspec
+cd ios
+rm -rf Pods Podfile.lock
+pod install
+cd ..
+
+
+flutter clean
+flutter pub get
+rm -Rf ios/Pods
+rm -Rf ios/.symlinks
+rm -Rf ios/Flutter/Flutter.framework
+rm -Rf ios/Flutter/Flutter.podspec
+cd ios
+pod install
+cd ..
+
+
+
+flutter build apk --release --flavor dev --target lib/main_dev.dart
+flutter build appbundle --release --flavor dev --target lib/main_dev.dart
+flutter build appbundle --release --flavor prod --target lib/main_prod.dart
+flutter build ios --release --flavor dev --target lib/main_dev.dart
+flutter build ios --release --flavor prod --target lib/main_prod.dart
+
+
+flutter run --release --flavor dev --target lib/main_dev.dart
+flutter run --release --flavor prod --target lib/main_prod.dart
+
+flutter run  --flavor prod --target lib/main_prod.dart
+flutter run  --flavor dev --target lib/main_dev.dart
