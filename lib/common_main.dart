@@ -16,8 +16,11 @@ Future<Widget> initMain(AppConfig child) async {
   await Firebase.initializeApp(options: child.fireBaseOptions);
 
   FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+  if (!kIsWeb) {
+    // Enable Crashlytics collection
+    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+  }
 
-  await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
   // catch errors from flutter framework
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
   // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics

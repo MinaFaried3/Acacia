@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:acacia/config/flavors/app_config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'firebase_options_prod.dart';
@@ -78,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
     FirebaseFirestore.instance
         .collection(AppConfig.instance.flavor.name)
-        .doc(Platform.operatingSystem)
+        .doc(kIsWeb ? 'web' : Platform.operatingSystem)
         .set({'time': _counter})
         .then((value) {
           print('Counter updated: $_counter');
