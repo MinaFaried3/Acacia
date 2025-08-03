@@ -26,6 +26,9 @@ dependencies:
   # date and time
   intl: ^0.20.2
 
+  # navigation
+  go_router: ^16.0.0
+
   # os system apis
   image_picker: ^1.1.2
   path_provider: ^2.1.5
@@ -84,6 +87,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.8
+
 
 
 
