@@ -1,0 +1,28 @@
+{
+    "status": true,
+    "message": "otpHasBeenSentToYourEmail",
+    "data": {
+        "otp": 1420
+    },
+    "guard": null,
+    "errors": null
+}
+
+{
+    "status": true,
+    "message": "Successfull login",
+    "data": {
+        "token": "78|ej9Pklr2yRMFfFxHlbfSFutnra9hY0iTsQKOUuE2ad1f27b6",
+        "item": {
+            "id": "23",
+            "email": "wasowaj843@paxnw.com",
+            "name": "",
+            "mobile": "",
+            "birth_date": "",
+            "gender": "",
+            "deleted_at": ""
+        }
+    },
+    "guard": null,
+    "errors": null
+}

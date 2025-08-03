@@ -1,0 +1,1 @@
+enum ContactType { phone, email }

@@ -1,8 +1,8 @@
+import 'package:acacia/app/config/flavors/app_config.dart';
+import 'package:acacia/app/config/flavors/flavors.dart';
 import 'package:acacia/common_main.dart';
 import 'package:flutter/material.dart';
 
-import 'config/flavors/app_config.dart';
-import 'config/flavors/flavors.dart';
 import 'main.dart';
 
 Future<void> main() async {
