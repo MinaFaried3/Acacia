@@ -1,4 +1,5 @@
 import 'package:acacia/app/config/flavors/app_config.dart';
+import 'package:acacia/app/shared/extensions/not_nullable_extensions.dart';
 import 'package:acacia/presentation/resources/routes/routes_manager.dart';
 import 'package:acacia/presentation/widgets/buttons/button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,7 +14,8 @@ Route<dynamic> unDefinedRoute() {
 }
 
 class UndefinedScreen extends StatefulWidget {
-  const UndefinedScreen({super.key});
+  final String? title;
+  const UndefinedScreen({super.key, this.title = ''});
 
   @override
   State<UndefinedScreen> createState() => _UndefinedScreenState();
@@ -39,6 +41,7 @@ class _UndefinedScreenState extends State<UndefinedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text(widget.title.orEmpty())),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

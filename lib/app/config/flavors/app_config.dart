@@ -1,4 +1,5 @@
 import 'package:acacia/app/config/platform/platform.dart';
+import 'package:acacia/app/shared/enums/user_role.dart';
 import 'package:acacia/firebase_options_dev.dart' as dev;
 import 'package:acacia/firebase_options_prod.dart' as prod;
 import 'package:firebase_core/firebase_core.dart';
@@ -10,7 +11,7 @@ class AppConfig extends InheritedWidget {
   final Flavor flavor;
   final String baseAPI;
   late final AppPlatform platform;
-
+  final ValueNotifier<UserRole> currentRole;
   static late final AppConfig instance;
 
   AppConfig({
@@ -18,7 +19,7 @@ class AppConfig extends InheritedWidget {
     required this.flavor,
     required this.baseAPI,
     required super.child,
-  }) {
+  }) : currentRole = ValueNotifier<UserRole>(UserRole.guest) {
     platform = currentPlatform;
     instance = this;
   }
@@ -36,5 +37,5 @@ class AppConfig extends InheritedWidget {
   }
 
   @override
-  bool updateShouldNotify(InheritedWidget oldWidget) => false;
+  bool updateShouldNotify(AppConfig oldWidget) => false; // notify when role changes;
 }
