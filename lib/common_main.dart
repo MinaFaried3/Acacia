@@ -11,6 +11,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'app/config/flavors/app_config.dart';
@@ -21,6 +22,12 @@ import 'app/shared/common/constants.dart';
 
 Future<Widget> initMain(AppConfig child) async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  //FOR WEB URL strategy
+  if (child.platform.isWeb) {
+    // Use the path URL strategy for web
+    usePathUrlStrategy();
+  }
 
   if (Platform.isIOS) {
     await AppTrackingTransparency.requestTrackingAuthorization();

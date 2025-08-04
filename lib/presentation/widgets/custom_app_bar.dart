@@ -1,10 +1,10 @@
-import 'package:acacia/app/services/navigation/navigation.dart';
 import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:acacia/presentation/resources/styles_manager.dart';
 import 'package:acacia/presentation/resources/theme_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;

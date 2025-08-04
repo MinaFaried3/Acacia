@@ -5,7 +5,6 @@
 * copy with the different colors only
 **/
 
-import 'package:acacia/app/services/navigation/navigation.dart';
 import 'package:acacia/app/shared/common/constants.dart';
 import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:acacia/presentation/resources/styles_manager.dart';
@@ -13,6 +12,7 @@ import 'package:acacia/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import 'font_manager.dart';
 

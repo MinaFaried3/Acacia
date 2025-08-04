@@ -5,7 +5,7 @@ class RoutesStrings {
   static const String startNowRoute = '/';
   static const String onboardingRoute = 'onboarding';
   static const String mainRoute = 'main';
-  static const String loginRoute = 'login';
+  static const String loginRoute = '/login';
   static const String otpRoute = '/otp';
   static const String startRoute = '/start';
 
@@ -28,7 +28,7 @@ class RoutesStrings {
   static const String orderItemRoute = '/orderItem';
   static const String subItemRoute = '/subItem';
 
-  static const String unDefinedRoute = '/un_defined';
+  static const String unDefinedRoute = '/undefined';
   static const String testRoute = '/test';
   static const String tempRoute = '/temp';
   static const String connectionRoute = '/connection-error';
