@@ -66,7 +66,7 @@ dependencies:
   # networking
   retrofit: ^4.7.0
   dio: ^5.8.0+1
-  pretty_dio_logger: ^1.4.0
+
 #  alice: ^1.0.0
   internet_connection_checker: 1.0.0+1
 
@@ -110,9 +110,37 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # splash and launcher icons generation
   flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.6
+  # code logs
+  pretty_dio_logger: ^1.4.0
+  logger: ^2.6.1
 
   flutter_lints: ^5.0.0
+
+  # code generation
+  json_serializable: ^6.10.0
+  build_runner: ^2.6.0
+  retrofit_generator: ^10.0.1
+
+
+flutter_assets_generator:
+  # Optional. Sets the directory of generated localization files. Provided value should be a valid path on lib dir. Default: generated
+  output_dir: generated
+  # Optional. Sets whether automatic monitoring of file changes. Default: true
+  auto_detection: true
+  # Optional. Sets file name conversion rules. Default: true
+  named_with_parent: true
+  # Optional. Sets the name for the generated localization file. Default: assets
+  output_filename: assets
+  # Optional. Sets the name for the generated localization class. Default: Assets
+  class_name: Assets
+  # Optional. Sets the filename split pattern for filename split. Default: [-_]
+  filename_split_pattern: "[-_ ]"
+  # Optional. Configuring ignore paths. Default: [],e.g: ["assets/fonts", "assets/images/dark", ...]
+  path_ignore: [ "assets/fonts" ]
+
 
 flutter:
 
