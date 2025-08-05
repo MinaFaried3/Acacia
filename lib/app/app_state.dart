@@ -32,7 +32,6 @@ class AppState extends BaseState {
   AppState copyWith({
     UiState? uiState,
     Failure? failure,
-
     String? openingRoutePath,
     bool? showLaterButton,
     bool? showIgnoreButton,

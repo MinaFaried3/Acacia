@@ -3,15 +3,12 @@ import 'dart:io';
 import 'package:acacia/app/config/flavors/app_config.dart';
 import 'package:acacia/app/services/di/dependency_injection.dart';
 import 'package:acacia/app/shared/common/printer_manager.dart';
-import 'package:acacia/app/shared/extensions/empty_or_null.dart';
 import 'package:acacia/data/network/cache_on_subsequent_calls.dart';
 import 'package:acacia/data/network/dio_factory/dio_factory.dart';
 import 'package:acacia/data/network/error/app_failures.dart';
 import 'package:acacia/presentation/common/enums/ui_state.dart';
-import 'package:acacia/presentation/resources/routes/routes_manager.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import 'base_state.dart';
 
@@ -30,8 +27,8 @@ void errorStateActions(BuildContext context, BaseState state) {
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case NoInternetConnectionFailure():
       PrintManager.print('NoInternetConnectionFailure');
-      //TODO handle not found for push named
-      context.pushNamed(RoutesStrings.connectionRoute);
+    //TODO handle not found for push named
+    // context.pushNamed(RoutesStrings.connectionRoute);
     case InternalServerErrorFailure():
       PrintManager.print('InternalServerErrorFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
@@ -50,11 +47,11 @@ void errorStateActions(BuildContext context, BaseState state) {
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case NotFoundFailure():
       PrintManager.print('NotFoundFailure');
-      //TODO handle not found for push named
-      context.pushNamed(
-        RoutesStrings.notFound404Route,
-        extra: (state.failure?.message).fromNullToEmpty,
-      );
+    //TODO handle not found for push named
+    // context.pushNamed(
+    //   RoutesStrings.notFound404Route,
+    //   extra: (state.failure?.message).fromNullToEmpty,
+    // );
     case UnprocessableEntityFailure():
       PrintManager.print('UnprocessableEntityFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
@@ -69,7 +66,7 @@ void errorStateActions(BuildContext context, BaseState state) {
 
 void userLogoutAndNavigateToLogin(BuildContext context) async {
   // go to Login Route
-  context.go(RoutesStrings.loginRoute);
+  // context.go(RoutesStrings.loginRoute);
   if (Platform.isIOS) {
     // FirebaseFirestore.instance
     //     .collection('user')

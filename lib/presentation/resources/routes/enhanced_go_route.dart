@@ -14,7 +14,7 @@ class AppGoRoute extends GoRoute {
 
   AppGoRoute({
     required super.path,
-    super.name,
+    required super.name,
     super.builder,
     super.pageBuilder,
     super.parentNavigatorKey,
@@ -35,7 +35,7 @@ class AppGoRoute extends GoRoute {
       redirect: (context, state) async {
         final userRole = AppConfig.instance.currentRole.value;
         if (!allowedRoles.contains(userRole)) {
-          return RoutesStrings.unDefinedRoute;
+          return Routes.undefined.path;
         }
         return await externalRedirect?.call(context, state);
       },
@@ -75,7 +75,7 @@ class AppShellRoute extends ShellRoute {
       redirect: (context, state) async {
         final userRole = AppConfig.instance.currentRole.value;
         if (!allowedRoles.contains(userRole)) {
-          return RoutesStrings.unDefinedRoute;
+          return Routes.undefined.path;
         }
         return await externalRedirect?.call(context, state);
       },

@@ -22,7 +22,7 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
   ) : super(
         AppState(
           uiState: UiState.initial,
-          openingRoutePath: Routes.unDefined.path,
+          openingRoutePath: Routes.adminLogin.path,
         ),
       ) {
     initApp();

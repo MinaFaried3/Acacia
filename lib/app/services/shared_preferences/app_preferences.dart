@@ -1,6 +1,7 @@
 import 'package:acacia/app/services/localization/language_manager.dart';
 import 'package:acacia/app/services/shared_preferences/shared_pref_keys.dart';
 import 'package:acacia/app/shared/common/constants.dart';
+import 'package:acacia/presentation/resources/routes/route_data.dart';
 import 'package:acacia/presentation/resources/routes/routes_manager.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -87,9 +88,9 @@ class AppPreferences extends Equatable {
     return token.isNotEmpty == true ? token : AppConstants.emptyString;
   }
 
-  Future<Routes> getOpeningRoutePath() async {
+  Future<RouteData> getOpeningRoutePath() async {
     // Check if the user is logged in
-    return Routes.unDefined;
+    return Routes.undefined;
     // String tokenString = await token;
     // bool isLoggedIn = await getBool(PrefKeys.isLoggedIn);
     // bool isDoneOnboarding = await getBool(PrefKeys.isDoneOnboardingScreen);
