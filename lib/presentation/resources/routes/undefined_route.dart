@@ -1,6 +1,5 @@
 import 'package:acacia/app/config/flavors/app_config.dart';
 import 'package:acacia/app/shared/extensions/not_nullable_extensions.dart';
-import 'package:acacia/presentation/resources/routes/routes_manager.dart';
 import 'package:acacia/presentation/widgets/buttons/button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -35,7 +34,7 @@ class _UndefinedScreenState extends State<UndefinedScreen> {
         .catchError((error) {
           print('Failed to update counter: $error');
         });
-    context.push(RoutesStrings.loginRoute);
+    context.pushNamed('login');
   }
 
   @override

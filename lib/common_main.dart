@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:acacia/app/config/platform/platform.dart';
 import 'package:acacia/app/services/di/dependency_injection.dart';
 import 'package:app_tracking_transparency/app_tracking_transparency.dart';
@@ -29,7 +27,7 @@ Future<Widget> initMain(AppConfig child) async {
     usePathUrlStrategy();
   }
 
-  if (Platform.isIOS) {
+  if (child.platform.isIOS) {
     await AppTrackingTransparency.requestTrackingAuthorization();
   }
 

@@ -27,7 +27,7 @@ class MyApp extends StatefulWidget {
     return _instance!;
   }
 
-  static final navigatorKey = GlobalKey<NavigatorState>();
+  static final navigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
   @override
   State<MyApp> createState() => _MyAppState();
