@@ -47,37 +47,4 @@ final ValueNotifier<RoutingConfig> appRoutingConfig =
       ),
     );
 
-List<RouteBase> buildRoutes(List<RouteBase> customRoutes) {
-  return customRoutes.map((route) {
-    if (route is AppGoRoute) {
-      return route.copyWithConvertedChildren(); // defined below
-    } else if (route is AppShellRoute) {
-      return route.copyWithConvertedChildren(); // defined below
-    } else {
-      return route;
-    }
-  }).toList();
-}
-
 //todo admin routes
-// List<RouteBase> generateRoutes(AuthCubit authCubit) {
-//   return protectedRoutes.map((route) {
-//     return GoRoute(
-//       path: route.path,
-//       name: route.name,
-//       builder: route.builder,
-//
-//       redirect: (context, state) {
-//         final auth = authCubit.state;
-//
-//         if (!auth.isAuthenticated) return '/login';
-//
-//         if (!route.allowedRoles.contains(auth.role)) {
-//           return '/unauthorized';
-//         }
-//
-//         return null;
-//       },
-//     );
-//   }).toList();
-// }

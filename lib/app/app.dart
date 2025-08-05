@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../presentation/resources/routes/go_router_layer.dart';
+import '../presentation/resources/routes/router.dart';
 import '../presentation/resources/strings_manager.dart' show AppStrings;
 import 'config/flavors/app_config.dart';
 

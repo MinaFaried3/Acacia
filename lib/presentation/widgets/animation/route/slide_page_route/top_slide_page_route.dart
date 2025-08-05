@@ -16,3 +16,20 @@ class TopSlidePageRoute extends SlidePageRoute {
          ),
        );
 }
+
+class TopSlideTransitionPage<T> extends SlideTransitionPage<T> {
+  TopSlideTransitionPage({
+    required super.key,
+    required super.child,
+    super.duration,
+    super.reverseDuration,
+    super.curve,
+    super.barrierColor,
+    super.barrierLabel,
+  }) : super(
+         tweenOffset: Tween<Offset>(
+           begin: const Offset(0, -1),
+           end: Offset.zero,
+         ),
+       );
+}

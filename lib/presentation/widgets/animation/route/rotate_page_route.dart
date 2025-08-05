@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class RotatePageRoute extends PageRouteBuilder {
   final WidgetBuilder builder;
@@ -37,4 +38,53 @@ class RotatePageRoute extends PageRouteBuilder {
          barrierColor: transitionColor,
          barrierLabel: voiceLabel, // renamed to voiceLabel
        );
+}
+
+class RotateTransitionPage<T> extends CustomTransitionPage<T> {
+  RotateTransitionPage({
+    required super.key,
+    required super.child,
+    Duration duration = const Duration(milliseconds: 500),
+    Duration reverseDuration = const Duration(milliseconds: 100),
+    Curve curve = Curves.easeOut,
+    double rotateCount = 1,
+    Tween<double>? tween,
+    super.barrierColor,
+    super.barrierLabel,
+  }) : super(
+         transitionDuration: duration,
+         reverseTransitionDuration: reverseDuration,
+         transitionsBuilder: (context, animation, secondaryAnimation, child) {
+           final curvedAnimation = CurvedAnimation(
+             parent: animation,
+             curve: curve,
+           );
+
+           final rotateTween =
+               tween ?? Tween<double>(begin: 0, end: rotateCount);
+
+           final rotateAnimation = rotateTween.animate(curvedAnimation);
+
+           return RotationTransition(turns: rotateAnimation, child: child);
+         },
+       );
+}
+
+class RotateTransitionPresets {
+  static RotateTransitionPage<T> normal<T>(Widget child, GoRouterState state) {
+    return RotateTransitionPage(key: state.pageKey, child: child);
+  }
+
+  static RotateTransitionPage<T> fastSpin<T>(
+    Widget child,
+    GoRouterState state,
+  ) {
+    return RotateTransitionPage(
+      key: state.pageKey,
+      child: child,
+      rotateCount: 2,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.linear,
+    );
+  }
 }

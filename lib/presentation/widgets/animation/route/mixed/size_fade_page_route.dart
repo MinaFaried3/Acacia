@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SizeFadePageRoute extends PageRouteBuilder {
   final WidgetBuilder builder;
@@ -42,5 +43,32 @@ class SizeFadePageRoute extends PageRouteBuilder {
          reverseTransitionDuration: reverseDuration,
          barrierColor: transitionColor,
          barrierLabel: voiceLabel,
+       );
+}
+
+class SizeFadeTransitionPage<T> extends CustomTransitionPage<T> {
+  SizeFadeTransitionPage({
+    required super.key,
+    required super.child,
+    Duration duration = const Duration(milliseconds: 500),
+    Duration reverseDuration = const Duration(milliseconds: 100),
+    AlignmentGeometry alignment = Alignment.center,
+    Curve curve = Curves.easeInOut,
+    super.barrierColor,
+    super.barrierLabel,
+  }) : super(
+         transitionDuration: duration,
+         reverseTransitionDuration: reverseDuration,
+         transitionsBuilder: (context, animation, secondaryAnimation, child) {
+           final curved = CurvedAnimation(parent: animation, curve: curve);
+
+           return Align(
+             alignment: alignment,
+             child: SizeTransition(
+               sizeFactor: curved,
+               child: FadeTransition(opacity: curved, child: child),
+             ),
+           );
+         },
        );
 }

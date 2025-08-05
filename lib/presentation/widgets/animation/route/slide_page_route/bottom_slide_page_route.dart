@@ -16,3 +16,21 @@ class BottomSlidePageRoute extends SlidePageRoute {
          ),
        );
 }
+
+class BottomSlideTransitionPage<T> extends SlideTransitionPage<T> {
+  BottomSlideTransitionPage({
+    required super.key,
+    required super.child,
+    super.duration,
+    super.reverseDuration,
+    super.curve,
+    super.alignment,
+    super.barrierColor,
+    super.barrierLabel,
+  }) : super(
+         tweenOffset: Tween<Offset>(
+           begin: const Offset(0, 1),
+           end: Offset.zero,
+         ),
+       );
+}

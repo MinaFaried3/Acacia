@@ -12,3 +12,16 @@ class HorizontalSizePageRoute extends SizePageRoute {
     super.curve,
   }) : super(axis: Axis.horizontal);
 }
+
+class HorizontalSizeTransitionPage<T> extends SizeTransitionPage<T> {
+  HorizontalSizeTransitionPage({
+    required super.key,
+    required super.child,
+    super.duration,
+    super.reverseDuration,
+    super.barrierColor, // ✅ replaces transitionColor
+    super.barrierLabel, // ✅ replaces voiceLabel
+    super.alignment,
+    super.curve,
+  }) : super(axis: Axis.horizontal);
+}

@@ -12,3 +12,16 @@ class VerticalSizePageRoute extends SizePageRoute {
     super.curve,
   }) : super(axis: Axis.vertical);
 }
+
+class VerticalSizeTransitionPage<T> extends SizeTransitionPage<T> {
+  VerticalSizeTransitionPage({
+    required super.key,
+    required super.child,
+    super.duration,
+    super.reverseDuration,
+    super.barrierColor, // ✅ replaces transitionColor
+    super.barrierLabel, // ✅ replaces voiceLabel
+    super.alignment,
+    super.curve,
+  }) : super(axis: Axis.vertical);
+}
