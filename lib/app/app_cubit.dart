@@ -34,7 +34,7 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
   void initApp() {
     try {
       getIt<FirebaseAnalytics>().logAppOpen();
-      PrintManager.print('APP OPENED +++++------', color: ConsoleColor.cyan);
+      printer('APP OPENED +++++------', color: ConsoleColor.cyan);
       getIt<FirebaseAnalytics>().logEvent(
         name: 'appOpened',
         parameters: {
@@ -53,7 +53,7 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
       //   loadRemoteConfigData();
       // });
     } catch (error) {
-      PrintManager.print("ErrorFirebaseAnalytics", color: ConsoleColor.red);
+      printer("ErrorFirebaseAnalytics", color: ConsoleColor.red);
     }
   }
 
@@ -82,7 +82,7 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
     // safeEmit(state.copyWith(uiState: UiState.loading));
     // final Routes openingRoutePath = await getIt<AppPreferences>()
     //     .getOpeningRoutePath();
-    // PrintManager.print(
+    // printer(
     //   "the opening route is $openingRoutePath",
     //   color: ConsoleColor.blueBg,
     // );
@@ -97,7 +97,7 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
   }
 
   // void testFireBase() async {
-  //   PrintManager.print("SUCCESS FireBAse++++++++++++++++++++++++++",
+  //   printer("SUCCESS FireBAse++++++++++++++++++++++++++",
   //       color: ConsoleColor.brightYellow);
   //   await FirebaseFirestore.instance
   //       .collection(AppConfig.instance.flavor.name)
@@ -106,12 +106,12 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
   //     'flavor': AppConfig.instance.flavor.name,
   //     "time": Timestamp.fromDate(DateTime.now())
   //   }).then((val) {
-  //     PrintManager.print("SUCCESS FireBAse++++++++++++++++++++++++++",
+  //     printer("SUCCESS FireBAse++++++++++++++++++++++++++",
   //         color: ConsoleColor.brightYellow);
   //   }).catchError((error, err) {
-  //     PrintManager.print("ERROR FireBAse++++++++++++++++++++++++++",
+  //     printer("ERROR FireBAse++++++++++++++++++++++++++",
   //         color: ConsoleColor.red);
-  //     PrintManager.print(error.toString(), color: ConsoleColor.red);
+  //     printer(error.toString(), color: ConsoleColor.red);
   //   });
   // }
 
@@ -142,7 +142,7 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
   //     ),
   //   );
   //
-  //   PrintManager.print(
+  //   printer(
   //     'state.showSubscription from Cubit -------  ${state.showSubscription}',
   //     color: ConsoleColor.yellowBg,
   //   );

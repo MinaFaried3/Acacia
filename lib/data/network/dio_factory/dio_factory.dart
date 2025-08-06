@@ -47,7 +47,7 @@ class DioFactory extends Equatable {
           responseBody: true,
           request: true,
           error: true,
-          logPrint: PrintManager.print,
+          logPrint: printer,
         ),
       );
     }

@@ -7,21 +7,11 @@ abstract class RoutesNames {
   static const String dashboard = 'dashboard';
   static const String products = 'products';
   static const String productDetails = 'productsDetails';
-  static const String priceList = 'priceList';
+  static const String priceLists = 'priceLists';
+  static const String oils = 'oils';
 }
 
 abstract class Routes {
-  static const allAllowedRoles = [
-    UserRole.guest,
-    UserRole.admin,
-    UserRole.customer,
-  ];
-  static const customerGuestRoles = [UserRole.guest, UserRole.customer];
-  static const adminGuestRoles = [UserRole.guest, UserRole.admin];
-  static const adminRole = [UserRole.admin];
-  static const customerRole = [UserRole.customer];
-  static const guestRole = [UserRole.guest];
-
   static const RouteData undefined = RouteData(
     name: RoutesNames.unDefined,
     path: '/${RoutesNames.unDefined}',
@@ -46,15 +36,22 @@ abstract class Routes {
     allowedRoles: adminRole,
   );
 
+  static const oils = RouteData(
+    name: RoutesNames.oils,
+    path: '/${RoutesNames.oils}',
+    allowedRoles: adminRole,
+  );
+
   static const productDetails = RouteData(
     name: RoutesNames.productDetails,
-    path: '/${RoutesNames.productDetails}',
+    path: RoutesNames.productDetails,
+    // path: '/${RoutesNames.productDetails}',
     allowedRoles: adminRole,
   );
 
   static const priceList = RouteData(
-    name: RoutesNames.priceList,
-    path: '/${RoutesNames.priceList}',
+    name: RoutesNames.priceLists,
+    path: '/${RoutesNames.priceLists}',
     allowedRoles: adminRole,
   );
 }

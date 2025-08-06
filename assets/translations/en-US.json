@@ -1,5 +1,5 @@
 {
-  "app_title": "Speed Service",
+  "app_title": "Acacia",
   "no_route": "Screen is not found",
   "skip": "skip",
   "onboarding_title_1": "No More Waiting",
@@ -61,8 +61,8 @@
   "enter_email": "Enter Email",
   "contact-number": "Contact Number",
   "connect-with-whatsapp": "Connect With Whatsapp",
-  "whatsapp-message": "Hello, I want some help at Speed Service",
-  "email-subject": "Speed Service Contact",
+  "whatsapp-message": "Hello, I want some help at Acacia",
+  "email-subject": "Acacia Contact",
   "email-body": "Dear, Customer Service Manager\n\n",
   "terms_and_conditions": "terms and conditions",
   "i_accept_the": "I accept the",

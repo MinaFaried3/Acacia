@@ -5,19 +5,19 @@ class MyBlocObserver extends BlocObserver {
   @override
   void onCreate(BlocBase bloc) {
     super.onCreate(bloc);
-    PrintManager.print('onCreate -- ${bloc.runtimeType}');
+    printer('onCreate -- ${bloc.runtimeType}');
   }
 
   @override
   void onEvent(Bloc bloc, Object? event) {
     super.onEvent(bloc, event);
-    PrintManager.print('onEvent -- ${bloc.runtimeType}, $event');
+    printer('onEvent -- ${bloc.runtimeType}, $event');
   }
 
   @override
   void onChange(BlocBase bloc, Change change) {
     super.onChange(bloc, change);
-    PrintManager.print(
+    printer(
       'onChange -- ${bloc.runtimeType}, $change',
       color: ConsoleColor.brightGreen,
     );
@@ -26,18 +26,18 @@ class MyBlocObserver extends BlocObserver {
   @override
   void onTransition(Bloc bloc, Transition transition) {
     super.onTransition(bloc, transition);
-    PrintManager.print('onTransition -- ${bloc.runtimeType}, $transition');
+    printer('onTransition -- ${bloc.runtimeType}, $transition');
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    PrintManager.print('onError -- ${bloc.runtimeType}, $error');
+    printer('onError -- ${bloc.runtimeType}, $error');
     super.onError(bloc, error, stackTrace);
   }
 
   @override
   void onClose(BlocBase bloc) {
     super.onClose(bloc);
-    PrintManager.print('onClose -- ${bloc.runtimeType}');
+    printer('onClose -- ${bloc.runtimeType}');
   }
 }

@@ -119,10 +119,7 @@ Failure handleBadResponseFailure(DioException error) {
         );
     }
   } catch (e) {
-    PrintManager.print(
-      "error from Server ,,,,,,, $statusCode",
-      color: ConsoleColor.redBg,
-    );
+    printer("error from Server ,,,,,,, $statusCode", color: ConsoleColor.redBg);
     return InternalServerErrorFailure(
       code: statusCode.orZero(),
       message: error.response?.statusMessage ?? '',

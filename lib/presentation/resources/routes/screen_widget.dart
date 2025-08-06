@@ -14,7 +14,7 @@ class ScreenWidget extends StatelessWidget {
     // return ConditionalBuilder(
     //     condition: RouteGenerator.startEntryRoutes.contains(route),
     //     onTrue: (context) {
-    //       PrintManager.print(
+    //       printer(
     //           'this is Opened Route a Upgrade Checker will work Now',
     //           color: ConsoleColor.brightBlue);
     //       return BlocBuilder<LocalCubit, LocalState>(

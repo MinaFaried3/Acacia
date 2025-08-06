@@ -94,15 +94,15 @@ class AppPreferences extends Equatable {
     // String tokenString = await token;
     // bool isLoggedIn = await getBool(PrefKeys.isLoggedIn);
     // bool isDoneOnboarding = await getBool(PrefKeys.isDoneOnboardingScreen);
-    // PrintManager.print(
+    // printer(
     //   "isLogged In = $isLoggedIn",
     //   color: ConsoleColor.brightBlackBg,
     // );
-    // PrintManager.print(
+    // printer(
     //   "is done onBoarding = $isDoneOnboarding",
     //   color: ConsoleColor.brightBlackBg,
     // );
-    // PrintManager.print(
+    // printer(
     //   "token = $tokenString",
     //   color: ConsoleColor.brightBlackBg,
     // );

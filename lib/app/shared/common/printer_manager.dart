@@ -43,8 +43,11 @@ enum ConsoleColor {
   const ConsoleColor(this.colorCode);
 }
 
+const PrintManager printer = PrintManager();
+
 class PrintManager {
-  static void print(
+  const PrintManager();
+  void call(
     dynamic object, {
     ConsoleColor color = ConsoleColor.magenta,
     bool useLog = false,
@@ -62,9 +65,5 @@ class PrintManager {
     }
 
     debugPrint(printedString);
-  }
-
-  static void printHint(dynamic object) {
-    print(object, color: ConsoleColor.brightBlack);
   }
 }

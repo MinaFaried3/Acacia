@@ -17,49 +17,49 @@ void errorStateActions(BuildContext context, BaseState state) {
 
   switch (state.failure) {
     case null:
-      PrintManager.print('unKnown error');
+      printer('unKnown error');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case ServerFailure():
-      PrintManager.print('ServerFailure');
+      printer('ServerFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case NotImplementedFailure():
-      PrintManager.print('NotImplementedFailure');
+      printer('NotImplementedFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case NoInternetConnectionFailure():
-      PrintManager.print('NoInternetConnectionFailure');
+      printer('NoInternetConnectionFailure');
     //TODO handle not found for push named
     // context.pushNamed(RoutesStrings.connectionRoute);
     case InternalServerErrorFailure():
-      PrintManager.print('InternalServerErrorFailure');
+      printer('InternalServerErrorFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case BadRequestFailure():
-      PrintManager.print('BadRequestFailure');
+      printer('BadRequestFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case UnauthorizedFailure():
-      PrintManager.print('UnauthorizedFailure');
+      printer('UnauthorizedFailure');
       userLogoutAndNavigateToLogin(context);
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case PaymentRequiredFailure():
-      PrintManager.print('PaymentRequiredFailure');
+      printer('PaymentRequiredFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case ForbiddenFailure():
-      PrintManager.print('ForbiddenFailure');
+      printer('ForbiddenFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case NotFoundFailure():
-      PrintManager.print('NotFoundFailure');
+      printer('NotFoundFailure');
     //TODO handle not found for push named
     // context.pushNamed(
     //   RoutesStrings.notFound404Route,
     //   extra: (state.failure?.message).fromNullToEmpty,
     // );
     case UnprocessableEntityFailure():
-      PrintManager.print('UnprocessableEntityFailure');
+      printer('UnprocessableEntityFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case LocationFailure():
-      PrintManager.print(state.failure?.message, color: ConsoleColor.redBg);
+      printer(state.failure?.message, color: ConsoleColor.redBg);
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
     case UnKnownFailure():
-      PrintManager.print('UnKnownFailure');
+      printer('UnKnownFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
   }
 }

@@ -43,7 +43,7 @@ class MyNavigatorObserver extends NavigatorObserver {
     Route<dynamic>? previousRoute,
   ) {
     super.didStartUserGesture(route, previousRoute);
-    PrintManager.print(
+    printer(
       "User gesture started on route: ${_getRouteName(route)}",
       color: ConsoleColor.yellow,
     );
@@ -52,12 +52,12 @@ class MyNavigatorObserver extends NavigatorObserver {
   @override
   void didStopUserGesture() {
     super.didStopUserGesture();
-    PrintManager.print("User gesture stopped.", color: ConsoleColor.yellow);
+    printer("User gesture stopped.", color: ConsoleColor.yellow);
   }
 
   /// Prints the current route stack, using route settings names or defaulting to runtime type.
   void printRouteStack() {
-    PrintManager.print(
+    printer(
       "routeStack => ${routeStack.map((r) => _getRouteName(r)).toList()}",
       color: ConsoleColor.blue,
     );

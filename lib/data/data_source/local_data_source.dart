@@ -126,7 +126,7 @@ abstract class LocalDataSource {
 //     final locations = await getUserLocations();
 //
 //     if (locations.isEmpty) return;
-//     PrintManager.print(locations.length);
+//     printer(locations.length);
 //
 //     final String? defaultLocationId = await getOpenHiveBox<String?>(
 //         boxName: HiveConstants.locationBox,
@@ -140,11 +140,11 @@ abstract class LocalDataSource {
 //         fieldName: HiveConstants.defaultLocationId,
 //         data: null,
 //       );
-//       PrintManager.print('default location has been deleted',
+//       printer('default location has been deleted',
 //           color: ConsoleColor.yellow);
 //     }
 //
-//     PrintManager.print(locations.length);
+//     printer(locations.length);
 //     setUserLocations(locations);
 //   }
 //
@@ -157,7 +157,7 @@ abstract class LocalDataSource {
 //         locations.indexWhere((location) => location.id == updatedLocation.id);
 //
 //     if (index == -1) {
-//       PrintManager.print("Location with ID ${updatedLocation.id} not found.");
+//       printer("Location with ID ${updatedLocation.id} not found.");
 //       return;
 //     }
 //     // Update the location at the found index

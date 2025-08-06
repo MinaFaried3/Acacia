@@ -9,13 +9,10 @@ mixin HiveMixin {
 
   Future<Box> getHiveBox(String boxName) async {
     if (Hive.isBoxOpen(boxName)) {
-      PrintManager.print(
-        "$boxName is already opened",
-        color: ConsoleColor.yellow,
-      );
+      printer("$boxName is already opened", color: ConsoleColor.yellow);
       return Hive.box(boxName);
     }
-    PrintManager.print("$boxName opened", color: ConsoleColor.yellow);
+    printer("$boxName opened", color: ConsoleColor.yellow);
     return Hive.openBox(boxName);
   }
 
@@ -49,7 +46,7 @@ mixin HiveMixin {
   }) async {
     Box hiveBox = await getHiveBox(boxName);
     hiveBox.put(fieldName, data);
-    PrintManager.print(data, color: ConsoleColor.yellow);
+    printer(data, color: ConsoleColor.yellow);
   }
 
   Future<void> deleteHiveBox(String boxName) async {
@@ -59,9 +56,9 @@ mixin HiveMixin {
     if (boxExists) {
       // If the box exists, delete it
       await Hive.deleteBoxFromDisk(boxName);
-      PrintManager.print("Box '$boxName' deleted successfully.");
+      printer("Box '$boxName' deleted successfully.");
     } else {
-      PrintManager.print("Box '$boxName' does not exist.");
+      printer("Box '$boxName' does not exist.");
     }
   }
 }

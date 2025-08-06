@@ -21,7 +21,7 @@ void tryCatch({
   try {
     methodToExecute.call();
   } catch (error) {
-    PrintManager.print(error, color: ConsoleColor.redBg);
+    printer(error, color: ConsoleColor.redBg);
   }
 }
 
@@ -51,7 +51,7 @@ Future<Uint8List> getImageFromRawData({
 
 String formatDateTimeForServer(DateTime dateTime) {
   final DateFormat formatter = DateFormat("yyyy-MM-ddTHH:mm:ss.SSS'Z'");
-  PrintManager.print(formatter.format(dateTime.toUtc()));
+  printer(formatter.format(dateTime.toUtc()));
   return formatter.format(dateTime.toUtc());
 }
 

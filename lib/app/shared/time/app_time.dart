@@ -17,7 +17,7 @@ abstract class AppTime {
   //     return calculateTimeDifference(parsedDate);
   //   } catch (e) {
   //     // Log error for invalid date formats
-  //     PrintManager.print(e, color: ConsoleColor.redBg);
+  //     printer(e, color: ConsoleColor.redBg);
   //     return '';
   //   }
   // }

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 mixin SafeEmitter<State> on Cubit<State> {
   void safeEmit(State state) {
     if (isClosed) {
-      PrintManager.print(
+      printer(
         "this cubit is closed , can't emit $State from $this",
         color: ConsoleColor.redBg,
       );
@@ -12,7 +12,7 @@ mixin SafeEmitter<State> on Cubit<State> {
     }
 
     if (this.state == state) {
-      PrintManager.print(
+      printer(
         "can't emit the provided state because it is same with the current state $this",
         color: ConsoleColor.brightRed,
       );

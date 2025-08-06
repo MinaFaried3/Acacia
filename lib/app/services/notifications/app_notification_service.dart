@@ -37,11 +37,11 @@
 //
 //     try {
 //       final String fcmToken = await firebaseMessaging.getToken() ?? '';
-//       PrintManager.print("fcmToken   $fcmToken",
+//       printer("fcmToken   $fcmToken",
 //           color: ConsoleColor.brightYellow);
 //       return fcmToken;
 //     } catch (e) {
-//       PrintManager.print("FCM TOKEN ERROR : $e", color: ConsoleColor.redBg);
+//       printer("FCM TOKEN ERROR : $e", color: ConsoleColor.redBg);
 //       return '';
 //     }
 //   }
@@ -51,10 +51,10 @@
 //     if ((await networkChecker.isConnected).isFalse) return '';
 //     try {
 //       final String apns = await firebaseMessaging.getAPNSToken() ?? '';
-//       PrintManager.print("apns   $apns", color: ConsoleColor.brightYellow);
+//       printer("apns   $apns", color: ConsoleColor.brightYellow);
 //       return apns;
 //     } catch (e) {
-//       PrintManager.print("APNs TOKEN ERROR : $e", color: ConsoleColor.redBg);
+//       printer("APNs TOKEN ERROR : $e", color: ConsoleColor.redBg);
 //       return '';
 //     }
 //   }

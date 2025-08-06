@@ -25,7 +25,7 @@
 //       }
 //       return false;
 //     } catch (error) {
-//       PrintManager.print(error.toString(), color: ConsoleColor.brightRed);
+//       printer(error.toString(), color: ConsoleColor.brightRed);
 //       return false;
 //     }
 //   }

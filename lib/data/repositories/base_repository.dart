@@ -50,7 +50,7 @@ abstract class BaseRepository {
       }
     } catch (error) {
       // AppLogger().error(error.toString());
-      PrintManager.print(error.toString(), color: ConsoleColor.reset);
+      printer(error.toString(), color: ConsoleColor.reset);
       return Left(ErrorHandler.handle(error).failure);
     }
     return Left(DataSourceStatus.noInternetConnection.getFailure());
@@ -88,7 +88,7 @@ abstract class BaseRepository {
       }
     } catch (error) {
       // AppLogger().error(error.toString());
-      PrintManager.print(error.toString(), color: ConsoleColor.reset);
+      printer(error.toString(), color: ConsoleColor.reset);
       return Left(ErrorHandler.handle(error).failure);
     }
     return Left(DataSourceStatus.noInternetConnection.getFailure());
@@ -117,7 +117,7 @@ abstract class BaseRepository {
       }
     } catch (error) {
       // AppLogger().error(error.toString());
-      PrintManager.print(error.toString(), color: ConsoleColor.reset);
+      printer(error.toString(), color: ConsoleColor.reset);
       return Left(ErrorHandler.handle(error).failure);
     }
     return Left(DataSourceStatus.noInternetConnection.getFailure());
@@ -136,7 +136,7 @@ abstract class BaseRepository {
       return Right(response);
     } catch (error) {
       // AppLogger().error(error.toString());
-      PrintManager.print(error.toString(), color: ConsoleColor.reset);
+      printer(error.toString(), color: ConsoleColor.reset);
       return Left(ErrorHandler.handle(error).failure);
     }
   }

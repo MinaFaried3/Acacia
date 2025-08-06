@@ -19,7 +19,7 @@ class AdminLoginScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 AppConfig.instance.currentRole.value = UserRole.admin;
-                context.pushNamed(Routes.dashboard.name);
+                context.goNamed(Routes.products.name);
               },
               child: const Text('Login'),
             ),

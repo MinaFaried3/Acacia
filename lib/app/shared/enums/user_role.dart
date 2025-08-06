@@ -1,5 +1,12 @@
 enum UserRole { guest, customer, admin }
 
+const allAllowedRoles = [UserRole.guest, UserRole.admin, UserRole.customer];
+const customerGuestRoles = [UserRole.guest, UserRole.customer];
+const adminGuestRoles = [UserRole.guest, UserRole.admin];
+const adminRole = [UserRole.admin];
+const customerRole = [UserRole.customer];
+const guestRole = [UserRole.guest];
+
 extension UserRoleExtension on UserRole {
   bool get isGuest => this == UserRole.guest;
   bool get isCustomer => this == UserRole.customer;

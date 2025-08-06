@@ -132,14 +132,14 @@ final class DIModulesManger {
 
   static void _printHint<T extends Object>(bool isRegistered) {
     if (isRegistered) {
-      PrintManager.printHint('$T is already registered factory no thing new');
+      printer('$T is already registered factory no thing new');
     } else {
-      PrintManager.printHint('$T is registered factory');
+      printer('$T is registered factory');
     }
   }
 
   static void _printIsRegistered<T extends Object>() {
-    PrintManager.printHint('$T is registered factory');
+    printer('$T is registered factory');
   }
 
   static void disposeBloc<T extends BlocBase>() {
@@ -147,7 +147,7 @@ final class DIModulesManger {
 
     getIt.unregister<T>();
     if (!(GetIt.I.isRegistered<T>())) {
-      PrintManager.printHint('$T is unregistered');
+      printer('$T is unregistered');
     }
   }
 }
