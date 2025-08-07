@@ -21,7 +21,7 @@ abstract class Routes {
   static const adminLogin = RouteData(
     name: RoutesNames.adminLogin,
     path: '/${RoutesNames.adminLogin}',
-    allowedRoles: guestRole,
+    allowedRoles: allAllowedRoles,
   );
 
   static const dashboard = RouteData(

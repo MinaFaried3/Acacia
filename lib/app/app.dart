@@ -1,16 +1,12 @@
 import 'package:acacia/app/app_cubit.dart';
-import 'package:acacia/app/config/app_mode.dart';
 import 'package:acacia/app/services/di/dependency_injection.dart';
 import 'package:acacia/app/shared/common/constants.dart';
 import 'package:acacia/app/shared/common/printer_manager.dart';
-import 'package:acacia/presentation/modules/shared/undefined/undefined_screen.dart';
-import 'package:acacia/presentation/resources/routes/observers.dart';
 import 'package:acacia/presentation/resources/theme_manager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 import '../presentation/resources/routes/router.dart';
 import '../presentation/resources/strings_manager.dart' show AppStrings;
@@ -77,14 +73,7 @@ class _MyAppState extends State<MyApp> {
                 },
                 darkTheme: getApplicationTheme(),
                 themeMode: ThemeMode.dark,
-                routerConfig: GoRouter.routingConfig(
-                  initialLocation: state.openingRoutePath,
-                  routingConfig: appRoutingConfig,
-                  navigatorKey: MyApp.navigatorKey,
-                  observers: routesObservers,
-                  debugLogDiagnostics: AppMode.devMode,
-                  errorBuilder: (context, state) => UndefinedScreen(),
-                ),
+                routerConfig: router,
               );
             },
           );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class UndefinedScreen extends StatelessWidget {
   const UndefinedScreen({super.key});
@@ -18,7 +17,7 @@ class UndefinedScreen extends StatelessWidget {
               padding: const EdgeInsets.all(35.0),
               child: ElevatedButton(
                 onPressed: () {
-                  context.pop();
+                  // context.pop();
                 },
                 child: const Text('Go Back'),
               ),
