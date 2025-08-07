@@ -11,6 +11,12 @@ class DashboardScreen extends StatelessWidget {
 
   const DashboardScreen({Key? key, required this.navigationShell})
     : super(key: key ?? const ValueKey<String>('DashboardScreen'));
+  void onTap(int index) {
+    navigationShell.goBranch(
+      index,
+      initialLocation: index == navigationShell.currentIndex,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +43,7 @@ class DashboardScreen extends StatelessWidget {
                       )
                       .toList(),
                   selectedIndex: navigationShell.currentIndex,
-                  onDestinationSelected: navigationShell.goBranch,
+                  onDestinationSelected: onTap,
                   indicatorColor: Theme.of(context).colorScheme.primary,
                 ),
 
@@ -61,7 +67,7 @@ class DashboardScreen extends StatelessWidget {
                       )
                       .toList(),
                   currentIndex: navigationShell.currentIndex,
-                  onTap: navigationShell.goBranch,
+                  onTap: onTap,
                   selectedItemColor: Theme.of(context).colorScheme.primary,
                 ),
         );

@@ -10,13 +10,15 @@ import 'enhanced_go_route.dart';
 class RouteData extends Equatable {
   final String name;
   final String path;
+  final String absolutePath;
   final List<UserRole> allowedRoles;
 
   const RouteData({
     required this.name,
     required this.path,
+    String? absolutePath,
     required this.allowedRoles,
-  });
+  }) : absolutePath = absolutePath ?? path;
 
   AppGoRoute toAppGoRoute({
     Widget Function(BuildContext, GoRouterState)? builder,
@@ -42,10 +44,10 @@ class RouteData extends Equatable {
   }
 
   @override
-  List<Object> get props => [name, path, allowedRoles];
+  List<Object> get props => [name, path, absolutePath, allowedRoles];
 
   @override
   String toString() {
-    return 'RouteData{name: $name, path: $path, allowedRoles: $allowedRoles}';
+    return 'RouteData{name: $name, path: $path, absolutePath: $absolutePath, allowedRoles: $allowedRoles}';
   }
 }

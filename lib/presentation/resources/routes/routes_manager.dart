@@ -45,7 +45,7 @@ abstract class Routes {
   static const productDetails = RouteData(
     name: RoutesNames.productDetails,
     path: RoutesNames.productDetails,
-    // path: '/${RoutesNames.productDetails}',
+    absolutePath: '/${RoutesNames.products}/${RoutesNames.productDetails}',
     allowedRoles: adminRole,
   );
 

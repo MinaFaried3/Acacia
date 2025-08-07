@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FontConstants {
   static const String arabicFontFamily = 'Fustat';
-  static const String englishFontFamily = 'Fustat';
+  static const String englishFontFamily = 'CaesarDressing';
 }
 
 class FontWeightManager {

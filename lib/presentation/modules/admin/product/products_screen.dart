@@ -19,7 +19,7 @@ class ProductsScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             TextButton(
-              onPressed: () => context.pushNamed(Routes.productDetails.name),
+              onPressed: () => context.push(Routes.productDetails.absolutePath),
               child: Text('Go to Product Details'),
             ),
           ],

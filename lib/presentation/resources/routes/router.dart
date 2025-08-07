@@ -1,5 +1,6 @@
 import 'package:acacia/app/app.dart';
 import 'package:acacia/app/config/app_mode.dart';
+import 'package:acacia/app/services/navigation/observers.dart';
 import 'package:acacia/app/shared/common/printer_manager.dart';
 import 'package:acacia/presentation/modules/admin/dashboard/cubit/dashboard_cubit.dart';
 import 'package:acacia/presentation/modules/admin/dashboard/dashboard_screen.dart';
@@ -9,9 +10,9 @@ import 'package:acacia/presentation/modules/admin/priceList/price_list_screen.da
 import 'package:acacia/presentation/modules/admin/product/products_screen.dart';
 import 'package:acacia/presentation/modules/admin/product_details/product_details_screen.dart';
 import 'package:acacia/presentation/modules/shared/undefined/undefined_screen.dart';
-import 'package:acacia/presentation/resources/routes/observers.dart';
 import 'package:acacia/presentation/resources/routes/routes_builder.dart';
 import 'package:acacia/presentation/resources/routes/routes_manager.dart';
+import 'package:acacia/presentation/widgets/animation/route/fade_page_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +37,12 @@ final List<RouteBase> appRoutes = [
             builder: (context, state) => const ProductsScreen(),
             routes: [
               Routes.productDetails.toAppGoRoute(
-                builder: (context, state) => ProductDetailsScreen(),
+                parentNavigatorKey: MyApp.navigatorKey,
+                pageBuilder: (context, state) => FadeTransitionPage(
+                  key: state.pageKey,
+                  child: ProductDetailsScreen(),
+                ),
+                // builder: (context, state) => ProductDetailsScreen(),
               ),
             ],
           ),
@@ -61,7 +67,16 @@ final List<RouteBase> appRoutes = [
 ];
 
 final ValueNotifier<RoutingConfig> appRoutingConfig =
-    ValueNotifier<RoutingConfig>(RoutingConfig(routes: buildRoutes(appRoutes)));
+    ValueNotifier<RoutingConfig>(
+      RoutingConfig(
+        routes: buildRoutes(appRoutes),
+        redirect: (context, state) {
+          //todo opening route here
+          printer('state.matchedLocation: ${state.matchedLocation}');
+          printer('state.topRoute: ${state.topRoute}');
+        },
+      ),
+    );
 
 final GoRouter router = GoRouter.routingConfig(
   initialLocation: Routes.adminLogin.path,
@@ -70,11 +85,9 @@ final GoRouter router = GoRouter.routingConfig(
   navigatorKey: MyApp.navigatorKey,
   observers: routesObservers,
   debugLogDiagnostics: AppMode.devMode,
-  onException: (context, state, router) {
+
+  errorBuilder: (context, state) {
     printer('error from go router', color: ConsoleColor.redBg);
+    return UndefinedScreen();
   },
-  // errorBuilder: (context, state) {
-  //   printer('error from go router', color: ConsoleColor.redBg);
-  //   return UndefinedScreen();
-  // },
 );

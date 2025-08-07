@@ -1,4 +1,5 @@
 import 'package:acacia/app/shared/common/printer_manager.dart';
+import 'package:acacia/presentation/resources/font_manager.dart';
 import 'package:acacia/presentation/resources/routes/routes_manager.dart';
 import 'package:acacia/presentation/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,31 @@ class OilsScreen extends StatelessWidget {
               style: get600SemiBoldStyle(),
             ),
             Text('   بكم في شاشة الزيوت اهلا', style: get600SemiBoldStyle()),
-            Text('   بكم في شاشة الزيوت اهلا'),
+            Text(
+              '   بكم في شاشة الزيوت اهلا',
+              style: TextStyle(
+                fontFamily: FontConstants.englishFontFamily,
+                fontSize: 20,
+              ),
+            ),
+
+            Text(
+              'Welcome to the Oil Management Screen!',
+              style: TextStyle(
+                fontFamily: FontConstants.englishFontFamily,
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+
+            Text(
+              'Welcome to the Oil Management Screen!',
+              style: TextStyle(
+                fontFamily: FontConstants.englishFontFamily,
+                fontSize: 20,
+                fontWeight: FontWeight.w200,
+              ),
+            ),
             TextButton(
               onPressed: () => context.pushNamed(Routes.priceList.name),
               child: Text(

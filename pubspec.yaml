@@ -166,6 +166,10 @@ flutter:
           weight: 300
         - asset: assets/fonts/fustat/Fustat_ExtraLight.ttf
           weight: 200
+    - family: CaesarDressing
+      fonts:
+        - asset: assets/fonts/caesar_dressing/CaesarDressing_Regular.ttf
+          weight: 400
 
 
 
