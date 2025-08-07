@@ -1,5 +1,6 @@
 import 'package:acacia/app/shared/common/printer_manager.dart';
 import 'package:acacia/presentation/resources/routes/routes_manager.dart';
+import 'package:acacia/presentation/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -16,8 +17,10 @@ class OilsScreen extends StatelessWidget {
           children: [
             Text(
               'Welcome to the Oil Management Screen!',
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: get600SemiBoldStyle(),
             ),
+            Text('   بكم في شاشة الزيوت اهلا', style: get600SemiBoldStyle()),
+            Text('   بكم في شاشة الزيوت اهلا'),
             TextButton(
               onPressed: () => context.pushNamed(Routes.priceList.name),
               child: Text(
