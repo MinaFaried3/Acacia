@@ -1,8 +1,35 @@
 import 'package:flutter/material.dart';
 
-abstract class ColorsManager {
+abstract class AppColors {
   // current palette
-  static const Color redPrimary = Color(0xffFF002B);
+  static const int _deepOlive = 0xff1B2B1E;
+  static const MaterialColor deepOlive = MaterialColor(_deepOlive, <int, Color>{
+    50: Color(0xFFBDC0BE),
+    100: Color(0xFF999F9A),
+    200: Color(0xFF757E77),
+    300: Color(0xFF515D53),
+    400: Color(0xFF2D3C30),
+    500: Color(_deepOlive),
+    550: Color(0xff324135),
+    600: Color(0xFF2D3930),
+    700: Color(0xFF29312A),
+    800: Color(0xFF242A25),
+    900: Color(0xFF1F2220),
+  });
+
+  static const MaterialColor redPrimary =
+      MaterialColor(0xffFF002B, <int, Color>{
+        50: Color(0xFFFFEBEE),
+        100: Color(0xFFFFCDD2),
+        200: Color(0xFFEF9A9A),
+        300: Color(0xFFE57373),
+        400: Color(0xFFEF5350),
+        500: Color(0xffFF002B),
+        600: Color(0xFFE53935),
+        700: Color(0xFFD32F2F),
+        800: Color(0xFFC62828),
+        900: Color(0xFFB71C1C),
+      });
   static const Color inactiveRedPrimary = Color(0xffF8C3CC);
   static const Color lightRedPrimary = Color(0xffFFF5F6);
   static const Color selectRedPrimary = Color(0xFFfffafb);
@@ -144,9 +171,5 @@ abstract class ColorsManager {
 }
 
 class GradientManager {
-  static const List<double> startNowStops = [
-    0.1,
-    0.6,
-    0.7,
-  ];
+  static const List<double> startNowStops = [0.1, 0.6, 0.7];
 }

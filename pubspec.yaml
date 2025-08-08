@@ -58,6 +58,7 @@ dependencies:
 #  firebase
   firebase_core: 3.13.0
   cloud_firestore: 5.6.7
+  cloud_firestore_odm: ^1.0.0-dev.88
   firebase_crashlytics: 4.3.5
   firebase_analytics: 11.4.5
   firebase_auth: 5.5.3
@@ -89,6 +90,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.8
+
 
 
 
@@ -177,4 +179,13 @@ flutter:
   assets:
     - assets/fonts/fustat/
     - assets/translations/
+    - assets/
+    - assets/fonts/
+    - assets/fonts/caesar_dressing/
+    - assets/icons/
+    - assets/icons/logo/
+    - assets/images/
+    - assets/images/logo/
+    - assets/animation/
+    - assets/animation/lottie/
 

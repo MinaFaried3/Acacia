@@ -43,7 +43,7 @@ class AppTextFormField extends StatelessWidget {
       minWidth: AppSize.s32,
       minHeight: AppSize.s32,
     ),
-    this.fillColor = ColorsManager.lightGreyBgSecondary,
+    this.fillColor = AppColors.lightGreyBgSecondary,
   });
 
   final bool isPassword;
@@ -103,7 +103,7 @@ class AppTextFormField extends StatelessWidget {
                 labelText!,
                 textAlign: TextAlign.start,
                 style: get400RegularStyle(
-                  color: ColorsManager.blackTextLightSecondary
+                  color: AppColors.blackTextLightSecondary
                     ..withValues(alpha: AppSize.s0_75),
                   fontSize: isTablet(context)
                       ? AppSize.s12.sp
@@ -131,7 +131,7 @@ class AppTextFormField extends StatelessWidget {
           readOnly: readOnly,
           cursorWidth: AppSize.s1,
           style: get400RegularStyle(
-            color: ColorsManager.blackTextSecondary,
+            color: AppColors.blackTextSecondary,
             fontSize: AppSize.s16.spMin,
           ),
           textAlignVertical: TextAlignVertical.center,
@@ -156,8 +156,7 @@ class AppTextFormField extends StatelessWidget {
                       height: AppSize.s10,
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
-                        ColorsManager.offWhite
-                          ..withValues(alpha: AppSize.s0_75),
+                        AppColors.offWhite..withValues(alpha: AppSize.s0_75),
                         BlendMode.srcIn,
                       ),
                     ),
@@ -175,7 +174,7 @@ class AppTextFormField extends StatelessWidget {
             fillColor: fillColor,
             hintText: hintText,
             hintStyle: get400RegularStyle(
-              color: ColorsManager.offWhite500.withValues(alpha: AppSize.s0_75),
+              color: AppColors.offWhite500.withValues(alpha: AppSize.s0_75),
               fontSize: isTablet(context) ? AppSize.s10.sp : AppSize.s12.spMin,
             ),
             border:
@@ -193,7 +192,7 @@ class AppTextFormField extends StatelessWidget {
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: borderRadius,
               borderSide: BorderSide(
-                color: ColorsManager.errorColor,
+                color: AppColors.errorColor,
                 width: AppSize.s2.sp,
               ),
             ),
@@ -206,12 +205,12 @@ class AppTextFormField extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: borderRadius,
               borderSide: BorderSide(
-                color: ColorsManager.bluePrimary,
+                color: AppColors.bluePrimary,
                 width: AppSize.s2.sp,
               ),
             ),
           ),
-          cursorColor: ColorsManager.redPrimary,
+          cursorColor: AppColors.redPrimary,
           focusNode: focusNode,
 
           validator: errorMessage == null ? validator : null,
@@ -224,7 +223,7 @@ class AppTextFormField extends StatelessWidget {
             child: Text(
               "$errorMessage",
               textAlign: TextAlign.start,
-              style: TextStyle(color: ColorsManager.errorColor),
+              style: TextStyle(color: AppColors.errorColor),
             ),
           ),
         ],

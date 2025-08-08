@@ -20,24 +20,24 @@ class CustomTabWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
-      overlayColor: WidgetStatePropertyAll<Color>(ColorsManager.white),
+      overlayColor: WidgetStatePropertyAll<Color>(AppColors.white),
       dividerColor: Colors.transparent,
       indicatorColor: Colors.transparent,
       controller: _tabController,
-      labelColor: ColorsManager.white,
-      unselectedLabelColor: ColorsManager.darkTextColor,
+      labelColor: AppColors.white,
+      unselectedLabelColor: AppColors.darkTextColor,
       labelPadding: EdgeInsets.all(AppSize.s2),
       labelStyle: get700BoldStyle(),
       tabAlignment: TabAlignment.fill,
       indicator: BoxDecoration(
-        color: ColorsManager.redPrimary,
+        color: AppColors.redPrimary,
         borderRadius: BorderRadius.circular(AppSize.s24.r),
       ),
       padding: EdgeInsets.symmetric(
         vertical: AppSize.s8,
         horizontal: AppSize.s8,
       ),
-      unselectedLabelStyle: get700BoldStyle(color: ColorsManager.grey200),
+      unselectedLabelStyle: get700BoldStyle(color: AppColors.grey200),
       dividerHeight: 0,
       indicatorPadding: EdgeInsets.all(0),
       isScrollable: false,

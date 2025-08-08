@@ -12,7 +12,7 @@ class AppListTile extends StatelessWidget {
     required this.iconPath,
     this.iconSize,
     this.fontSize,
-    this.iconColor = ColorsManager.offWhite300,
+    this.iconColor = AppColors.offWhite300,
     this.style,
   });
 

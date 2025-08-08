@@ -71,8 +71,7 @@ Widget buildIcon(
         height: iconSize ?? AppSize.s24.sp,
         matchTextDirection: true,
         colorFilter: ColorFilter.mode(
-          iconColor ??
-              (matchFontColor ? fontColor : ColorsManager.redPrimaryAA),
+          iconColor ?? (matchFontColor ? fontColor : AppColors.redPrimaryAA),
           BlendMode.srcIn,
         ),
       )

@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.centerTitle = false,
     this.onBackButtonPressed,
     this.systemOverlayStyle,
-    this.backgroundColor = ColorsManager.whiteRedBgColor,
+    this.backgroundColor = AppColors.whiteRedBgColor,
     this.hasParentStack = true,
     this.actions,
   });
@@ -32,11 +32,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: centerTitle,
       systemOverlayStyle:
           systemOverlayStyle ?? ThemeManger.whiteRedStatusBarStyle,
-      surfaceTintColor: ColorsManager.white,
+      surfaceTintColor: AppColors.white,
       actions: actions,
       leading: hasParentStack
           ? BackButton(
-              color: ColorsManager.darkTextColor,
+              color: AppColors.darkTextColor,
               onPressed: onBackButtonPressed ?? () => context.pop(),
             )
           : SizedBox(),

@@ -19,100 +19,100 @@ import 'font_manager.dart';
 class ThemeManger {
   static const ColorScheme colorScheme = ColorScheme(
     //primary main color for selected and elevated text and indicator
-    primary: ColorsManager.redPrimary,
+    primary: AppColors.redPrimary,
     //color of icons on primary color
-    onPrimary: ColorsManager.lightGreyBgSecondary,
+    onPrimary: AppColors.lightGreyBgSecondary,
     //color of backgrounds like avatar of flouting buttons
-    primaryContainer: ColorsManager.orangeSecondary,
+    primaryContainer: AppColors.orangeSecondary,
     // color of icon on onPrimary
-    onPrimaryContainer: ColorsManager.offWhite300,
+    onPrimaryContainer: AppColors.offWhite300,
     brightness: Brightness.dark,
     //color of background
-    surface: ColorsManager.whiteTextColor,
+    surface: AppColors.whiteTextColor,
 
-    tertiary: ColorsManager.lightGreyBgSecondary,
+    tertiary: AppColors.lightGreyBgSecondary,
     //back color for am or pm in time picker
-    tertiaryContainer: ColorsManager.offWhite200,
+    tertiaryContainer: AppColors.offWhite200,
 
     //color for am or pm in time picker
-    onTertiaryContainer: ColorsManager.lightGreyBgSecondary,
+    onTertiaryContainer: AppColors.lightGreyBgSecondary,
 
     //outline color in date picker under the date and  dividers or decorative elements.
-    outlineVariant: ColorsManager.lightGreyBgSecondary,
+    outlineVariant: AppColors.lightGreyBgSecondary,
 
     //color of all borders and color of dot switch
-    outline: ColorsManager.lightGreyBgSecondary,
+    outline: AppColors.lightGreyBgSecondary,
 
     //input validation errors InputDecoration.errorText.
-    error: ColorsManager.red700,
+    error: AppColors.red700,
 
     //mix with surface color
     surfaceTint: null,
 
     //date title in date picker and icon button color ,and switching color of switch,and unselected checkbox
-    onSurfaceVariant: ColorsManager.greyTextSecondary,
+    onSurfaceVariant: AppColors.greyTextSecondary,
     //color of hour on time picker and back color of linear indicator, back ground of false switch
-    surfaceContainerHighest: ColorsManager.orangeSecondary,
+    surfaceContainerHighest: AppColors.orangeSecondary,
     //like snackBar for background
-    inverseSurface: ColorsManager.redPrimary,
-    shadow: ColorsManager.lightOffWhite,
+    inverseSurface: AppColors.redPrimary,
+    shadow: AppColors.lightOffWhite,
 
     //unused
     //appbar back ground you make
-    inversePrimary: ColorsManager.lightGreyBgSecondary,
+    inversePrimary: AppColors.lightGreyBgSecondary,
     //colors of borders on background
-    onSurface: ColorsManager.redPrimary,
+    onSurface: AppColors.redPrimary,
     //secondary
-    secondary: ColorsManager.yellow,
-    secondaryContainer: ColorsManager.yellow300,
-    onSecondary: ColorsManager.grey,
-    onSecondaryContainer: ColorsManager.yellow1000,
+    secondary: AppColors.yellow,
+    secondaryContainer: AppColors.yellow300,
+    onSecondary: AppColors.grey,
+    onSecondaryContainer: AppColors.yellow1000,
 
     //error
-    onError: ColorsManager.red300,
-    errorContainer: ColorsManager.red400,
-    onErrorContainer: ColorsManager.red900,
+    onError: AppColors.red300,
+    errorContainer: AppColors.red400,
+    onErrorContainer: AppColors.red900,
     //surface
-    onInverseSurface: ColorsManager.grey400,
+    onInverseSurface: AppColors.grey400,
     //tertiary
-    onTertiary: ColorsManager.lightGreyBgSecondary,
+    onTertiary: AppColors.lightGreyBgSecondary,
     //scrim
     // scrim: Colors.purple,
   );
 
   static const IconThemeData iconThemeData = IconThemeData(
-    color: ColorsManager.darkTextColor,
+    color: AppColors.darkTextColor,
   );
 
   static ActionIconThemeData actionIconThemeData = ActionIconThemeData(
     backButtonIconBuilder: (BuildContext context) => IconButton(
       icon: Icon(Icons.arrow_back_ios_new_rounded),
       onPressed: () => context.pop(),
-      color: ColorsManager.darkTextColor,
+      color: AppColors.darkTextColor,
     ),
   );
 
   static SystemUiOverlayStyle whiteStatusBarStyle = const SystemUiOverlayStyle(
-    statusBarColor: ColorsManager.whiteBgColor, // iOS
+    statusBarColor: AppColors.whiteBgColor, // iOS
     statusBarBrightness: Brightness.light, // iOS
     statusBarIconBrightness: Brightness.dark, //Android
-    systemNavigationBarColor: ColorsManager.whiteBgColor, //Android
+    systemNavigationBarColor: AppColors.whiteBgColor, //Android
     systemNavigationBarIconBrightness: Brightness.dark, // Android
   );
 
   static SystemUiOverlayStyle whiteRedStatusBarStyle = SystemUiOverlayStyle(
-    statusBarColor: ColorsManager.whiteRedBgColor,
+    statusBarColor: AppColors.whiteRedBgColor,
     statusBarBrightness: Brightness.light,
     statusBarIconBrightness: Brightness.dark,
-    systemNavigationBarColor: ColorsManager.whiteRedBgColor,
+    systemNavigationBarColor: AppColors.whiteRedBgColor,
     systemNavigationBarIconBrightness: Brightness.dark,
   );
 
   static SystemUiOverlayStyle lightBlueStatusBarStyle = SystemUiOverlayStyle(
-    statusBarColor: ColorsManager.lightBlueGreyBgColor,
+    statusBarColor: AppColors.lightBlueGreyBgColor,
     statusBarBrightness: Brightness.light,
     statusBarIconBrightness: Brightness.dark,
-    systemNavigationBarColor: ColorsManager.lightBlueGreyBgColor,
+    systemNavigationBarColor: AppColors.lightBlueGreyBgColor,
     systemNavigationBarIconBrightness: Brightness.dark,
   );
 
@@ -137,7 +137,7 @@ class ThemeManger {
     systemOverlayStyle: whiteStatusBarStyle,
     iconTheme: iconThemeData,
     actionsIconTheme: iconThemeData,
-    color: ColorsManager.whiteBgColor,
+    color: AppColors.whiteBgColor,
     elevation: AppSize.s0,
     // shadowColor: ColorManager.lightPrimary,
     titleTextStyle: get600SemiBoldStyle(fontSize: FontSize.s18.sp),
@@ -145,18 +145,18 @@ class ThemeManger {
 
   static const ButtonThemeData buttonThemeData = ButtonThemeData(
     shape: StadiumBorder(),
-    disabledColor: ColorsManager.grey1,
-    buttonColor: ColorsManager.paleVioletRed,
-    splashColor: ColorsManager.beige1,
+    disabledColor: AppColors.grey1,
+    buttonColor: AppColors.paleVioletRed,
+    splashColor: AppColors.beige1,
   );
 
   static final TextButtonThemeData textButtonThemeData = TextButtonThemeData(
     style: ButtonStyle(
-      foregroundColor: const WidgetStatePropertyAll(ColorsManager.whiteBgColor),
+      foregroundColor: const WidgetStatePropertyAll(AppColors.whiteBgColor),
       padding: const WidgetStatePropertyAll(EdgeInsets.all(AppPadding.p0)),
       textStyle: WidgetStatePropertyAll(
         get700BoldStyle(
-          color: ColorsManager.whiteTextColor,
+          color: AppColors.whiteTextColor,
           fontSize: FontSize.s22.sp,
         ),
       ),
@@ -166,11 +166,9 @@ class ThemeManger {
   static final OutlinedButtonThemeData outlinedButtonThemeData =
       OutlinedButtonThemeData(
         style: ButtonStyle(
-          foregroundColor: const WidgetStatePropertyAll(
-            ColorsManager.errorColor,
-          ),
+          foregroundColor: const WidgetStatePropertyAll(AppColors.errorColor),
           side: const WidgetStatePropertyAll(
-            BorderSide(color: ColorsManager.whiteBgColor),
+            BorderSide(color: AppColors.whiteBgColor),
           ),
           shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(
@@ -193,10 +191,10 @@ class ThemeManger {
       ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           textStyle: get400RegularStyle(
-            color: ColorsManager.whiteBgColor,
+            color: AppColors.whiteBgColor,
             fontSize: FontSize.s17,
           ),
-          backgroundColor: ColorsManager.redPrimary,
+          backgroundColor: AppColors.redPrimary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSize.s12),
           ),
@@ -207,84 +205,84 @@ class ThemeManger {
   static final TextTheme textTheme = TextTheme(
     //headlines
     headlineLarge: get800ExtraBoldStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s28.sp,
     ),
     headlineMedium: get700BoldStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s26.sp,
     ),
     headlineSmall: get600SemiBoldStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s20.sp,
     ),
 
     //titles
     titleLarge: get600SemiBoldStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s28.sp,
     ),
     titleMedium: get400RegularStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s26.sp,
     ),
     titleSmall: get500MediumStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s20.sp,
     ),
 
     //displays
     displayLarge: get400RegularStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s28.sp,
     ),
     displayMedium: get500MediumStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s26.sp,
     ),
     displaySmall: get300LightStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s20.sp,
     ),
 
     //bodies
     bodyLarge: get400RegularStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s22.sp,
     ),
     bodyMedium: get500MediumStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s15.sp,
     ),
     bodySmall: get300LightStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s14.sp,
     ),
 
     //labels
     labelLarge: get500MediumStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s28.sp,
     ),
     labelMedium: get300LightStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s26.sp,
     ),
     labelSmall: get200ExtraLightStyle(
-      color: ColorsManager.blackTextSecondary,
+      color: AppColors.blackTextSecondary,
       fontSize: FontSize.s20.sp,
     ),
   );
 
   static const BottomSheetThemeData bottomSheetThemeData = BottomSheetThemeData(
-    backgroundColor: ColorsManager.white,
+    backgroundColor: AppColors.white,
   );
 
   static const TextSelectionThemeData textSelectionThemeData =
       TextSelectionThemeData(
-        cursorColor: ColorsManager.redPrimary,
-        selectionColor: ColorsManager.bluePrimary25,
-        selectionHandleColor: ColorsManager.redPrimary,
+        cursorColor: AppColors.redPrimary,
+        selectionColor: AppColors.bluePrimary25,
+        selectionHandleColor: AppColors.redPrimary,
       );
 
   static final InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
@@ -296,24 +294,24 @@ class ThemeManger {
     ),
     // hint style
     hintStyle: get400RegularStyle(
-      color: ColorsManager.blackTextSecondary.withOpacity(AppSize.s0_75),
+      color: AppColors.blackTextSecondary.withOpacity(AppSize.s0_75),
       fontSize: AppSize.s28.sp,
     ),
     //align label
     alignLabelWithHint: true,
     labelStyle: get400RegularStyle(
-      color: ColorsManager.blackTextSecondary.withOpacity(AppSize.s0_75),
+      color: AppColors.blackTextSecondary.withOpacity(AppSize.s0_75),
       fontSize: AppSize.s20.sp,
     ),
     errorStyle: get400RegularStyle(
-      color: ColorsManager.red700,
+      color: AppColors.red700,
       fontSize: AppSize.s14,
     ),
     errorMaxLines: AppConstants.one,
 
     //filled colors
     filled: true,
-    fillColor: ColorsManager.lightBlueGreyBgColor,
+    fillColor: AppColors.lightBlueGreyBgColor,
 
     // enabled border style
     enabledBorder: const OutlineInputBorder(
@@ -323,16 +321,13 @@ class ThemeManger {
 
     // focused border style
     focusedBorder: const OutlineInputBorder(
-      borderSide: BorderSide(
-        color: ColorsManager.bluePrimary,
-        width: AppSize.s1_5,
-      ),
+      borderSide: BorderSide(color: AppColors.bluePrimary, width: AppSize.s1_5),
       borderRadius: BorderRadius.all(Radius.circular(AppSize.s20)),
     ),
 
     // error border style
     errorBorder: const OutlineInputBorder(
-      borderSide: BorderSide(color: ColorsManager.red700, width: AppSize.s1),
+      borderSide: BorderSide(color: AppColors.red700, width: AppSize.s1),
       borderRadius: BorderRadius.all(Radius.circular(AppSize.s20)),
     ),
 
@@ -350,13 +345,13 @@ ThemeData getApplicationTheme() {
     brightness: Brightness.dark,
     // main colors
     colorScheme: ThemeManger.colorScheme,
-    primaryColor: ColorsManager.redPrimary,
-    primaryColorLight: ColorsManager.errorColor,
-    focusColor: ColorsManager.thistle,
-    primaryColorDark: ColorsManager.mauva,
-    disabledColor: ColorsManager.grey1,
-    splashColor: ColorsManager.beige1,
-    scaffoldBackgroundColor: ColorsManager.whiteBgColor,
+    primaryColor: AppColors.redPrimary,
+    primaryColorLight: AppColors.errorColor,
+    focusColor: AppColors.thistle,
+    primaryColorDark: AppColors.mauva,
+    disabledColor: AppColors.grey1,
+    splashColor: AppColors.beige1,
+    scaffoldBackgroundColor: AppColors.whiteBgColor,
 
     //todo
     badgeTheme: const BadgeThemeData(),

@@ -30,7 +30,7 @@ class CircleButton extends StatelessWidget {
       children: [
         AppElevation(
           shape: CircleBorder(),
-          color: ColorsManager.white,
+          color: AppColors.white,
           child: InkWell(
             onTap: onPressed,
             customBorder: CircleBorder(),
@@ -44,14 +44,14 @@ class CircleButton extends StatelessWidget {
                       width: size * 0.65,
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
-                        ColorsManager.darkTextColor,
+                        AppColors.darkTextColor,
                         BlendMode.srcIn,
                       ),
                     )
                   : Icon(
                       icon,
                       size: size * 0.65,
-                      color: ColorsManager.darkTextColor,
+                      color: AppColors.darkTextColor,
                     ),
             ),
           ),
@@ -64,7 +64,7 @@ class CircleButton extends StatelessWidget {
               width: AppSize.s10,
               height: AppSize.s10,
               decoration: BoxDecoration(
-                color: ColorsManager.redPrimary,
+                color: AppColors.redPrimary,
                 shape: BoxShape.circle,
               ),
             ),

@@ -67,7 +67,7 @@ class CustomDialog extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(AppSize.s20.r),
-              color: ColorsManager.white,
+              color: AppColors.white,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -117,7 +117,7 @@ class CustomDialog extends StatelessWidget {
             },
             icon: Icon(
               Icons.highlight_remove_outlined,
-              color: ColorsManager.lightGreyTextSecondary,
+              color: AppColors.lightGreyTextSecondary,
             ),
           ),
         ],

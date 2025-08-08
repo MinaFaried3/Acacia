@@ -14,7 +14,7 @@ TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
 // extra style
 TextStyle get200ExtraLightStyle({
   double fontSize = FontSize.s10,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) {
   return _getTextStyle(fontSize, FontWeightManager.extraLight, color);
 }
@@ -22,7 +22,7 @@ TextStyle get200ExtraLightStyle({
 // light style
 TextStyle get300LightStyle({
   double fontSize = FontSize.s12,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) {
   return _getTextStyle(fontSize, FontWeightManager.light, color);
 }
@@ -30,7 +30,7 @@ TextStyle get300LightStyle({
 // regular style
 TextStyle get400RegularStyle({
   double fontSize = FontSize.s14,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) {
   return _getTextStyle(fontSize, FontWeightManager.regular, color);
 }
@@ -38,7 +38,7 @@ TextStyle get400RegularStyle({
 // medium style
 TextStyle get500MediumStyle({
   double? fontSize = FontSize.s16,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) {
   return _getTextStyle(
     fontSize ?? FontSize.s16,
@@ -50,7 +50,7 @@ TextStyle get500MediumStyle({
 // semiBold style
 TextStyle get600SemiBoldStyle({
   double fontSize = FontSize.s16,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) {
   return _getTextStyle(fontSize, FontWeightManager.semiBold, color);
 }
@@ -58,7 +58,7 @@ TextStyle get600SemiBoldStyle({
 // bold style
 TextStyle get700BoldStyle({
   double? fontSize = FontSize.s16,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) {
   return _getTextStyle(fontSize ?? FontSize.s16, FontWeightManager.bold, color);
 }
@@ -66,7 +66,7 @@ TextStyle get700BoldStyle({
 // extra bold style
 TextStyle get800ExtraBoldStyle({
   double fontSize = FontSize.s16,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) {
   return _getTextStyle(fontSize, FontWeightManager.extraBold, color);
 }
@@ -74,62 +74,62 @@ TextStyle get800ExtraBoldStyle({
 // black style
 TextStyle get900BlackStyle({
   double fontSize = FontSize.s16,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) {
   return _getTextStyle(fontSize, FontWeightManager.black, color);
 }
 
 TextStyle getHeading1Style({
   double fontSize = FontSize.s24,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.bold, color);
 
 TextStyle getHeading1GreyStyle({
   double fontSize = FontSize.s24,
-  Color color = ColorsManager.greyTextColor,
+  Color color = AppColors.greyTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.bold, color);
 
 TextStyle getHeading2Style({
   double fontSize = FontSize.s20,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.bold, color);
 
 TextStyle getHeading3Style({
   double fontSize = FontSize.s16,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.bold, color);
 
 TextStyle getText1Style({
   double fontSize = FontSize.s16,
-  Color color = ColorsManager.greyTextColor,
+  Color color = AppColors.greyTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.medium, color);
 
 TextStyle getNumberStyle({
   double fontSize = FontSize.s24,
-  Color color = ColorsManager.bluePrimary,
+  Color color = AppColors.bluePrimary,
 }) => _getTextStyle(fontSize, FontWeightManager.bold, color);
 
 TextStyle getText2Style({
   double fontSize = FontSize.s14,
-  Color color = ColorsManager.darkTextColor,
+  Color color = AppColors.darkTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.bold, color);
 
 TextStyle getText3Style({
   double fontSize = FontSize.s14,
-  Color color = ColorsManager.greyTextColor,
+  Color color = AppColors.greyTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.bold, color);
 
 TextStyle getText4Style({
   double fontSize = FontSize.s14,
-  Color color = ColorsManager.greyTextColor,
+  Color color = AppColors.greyTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.medium, color);
 
 TextStyle getText5Style({
   double fontSize = FontSize.s12,
-  Color color = ColorsManager.greyTextColor,
+  Color color = AppColors.greyTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.medium, color);
 
 TextStyle getNavigationTextStyle({
   double fontSize = FontSize.s10,
-  Color color = ColorsManager.greyTextColor,
+  Color color = AppColors.greyTextColor,
 }) => _getTextStyle(fontSize, FontWeightManager.medium, color);

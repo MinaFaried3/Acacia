@@ -61,8 +61,8 @@ class AppButton extends StatelessWidget {
   }) => AppButton(
     text: text,
     onPressed: onPressed,
-    fontColor: ColorsManager.whiteTextColor,
-    backgroundColor: ColorsManager.redPrimary,
+    fontColor: AppColors.whiteTextColor,
+    backgroundColor: AppColors.redPrimary,
     height: height,
     width: width,
     svgIconPath: svgIconPath,
@@ -82,7 +82,7 @@ class AppButton extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: WidgetStatePropertyAll(
             onPressed == null
-                ? ColorsManager.redPrimary75
+                ? AppColors.redPrimary75
                 : backgroundColor ?? Theme.of(context).colorScheme.onSurface,
           ),
           foregroundColor: WidgetStatePropertyAll(

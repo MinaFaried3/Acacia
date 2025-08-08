@@ -6,12 +6,12 @@ import 'color_manager.dart';
 
 class DecorationManager {
   static BoxDecoration whiteRoundedBox = BoxDecoration(
-    color: ColorsManager.white,
+    color: AppColors.white,
     borderRadius: BorderRadius.circular(12.r),
   );
 
   static BoxDecoration mintRoundedBox = BoxDecoration(
     borderRadius: BorderRadius.circular(AppSize.s20.r),
-    color: ColorsManager.lightMintGreenBgColor,
+    color: AppColors.lightMintGreenBgColor,
   );
 }

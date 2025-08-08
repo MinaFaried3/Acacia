@@ -11,8 +11,8 @@ class AppBottomNavBar extends StatefulWidget {
     super.key,
     required this.onChangePage,
     required this.items,
-    this.selectedItemColor = ColorsManager.offWhite,
-    this.unSelectedItemColor = ColorsManager.redPrimary22,
+    this.selectedItemColor = AppColors.offWhite,
+    this.unSelectedItemColor = AppColors.redPrimary22,
     this.initSelectedIndex = 0,
   });
 
@@ -110,14 +110,14 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
     return BoxDecoration(
       border: isCurrentItemSelected
           ? const Border(
-              top: BorderSide(width: 2.5, color: ColorsManager.offWhite400),
+              top: BorderSide(width: 2.5, color: AppColors.offWhite400),
             )
           : null,
       gradient: isCurrentItemSelected
           ? LinearGradient(
               colors: [
-                ColorsManager.offWhite600.withOpacity(0.4),
-                ColorsManager.offWhite700.withOpacity(0.01),
+                AppColors.offWhite600.withOpacity(0.4),
+                AppColors.offWhite700.withOpacity(0.01),
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -136,9 +136,9 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
 
   BoxDecoration buildNavBarDecoration() {
     return BoxDecoration(
-      color: ColorsManager.redPrimaryAA,
+      color: AppColors.redPrimaryAA,
       borderRadius: BorderRadius.circular(18),
-      border: Border.all(color: ColorsManager.offWhite800, width: 1),
+      border: Border.all(color: AppColors.offWhite800, width: 1),
     );
   }
 

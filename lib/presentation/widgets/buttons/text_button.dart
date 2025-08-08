@@ -28,7 +28,7 @@ class AppTextButton extends StatelessWidget {
         child: Text(
           text,
           style: get500MediumStyle(
-            color: ColorsManager.bluePrimary,
+            color: AppColors.bluePrimary,
             fontSize:
                 fontSize ??
                 (isTablet(context) ? AppSize.s10.sp : AppSize.s14.spMin),

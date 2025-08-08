@@ -9,7 +9,7 @@ class AppSvg extends StatelessWidget {
     this.fit,
     this.width,
     this.height,
-    this.color = ColorsManager.offWhite,
+    this.color = AppColors.offWhite,
     this.matchTextDirection = true,
   });
 
