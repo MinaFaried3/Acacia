@@ -17,6 +17,177 @@ abstract class AppColors {
     900: Color(0xFF1F2220),
   });
 
+  static const int _error = 0xFF8D2A04;
+  static const MaterialColor error = MaterialColor(_error, <int, Color>{
+    50: Color(0xFFC6BCB8),
+    100: Color(0xFFAA968F),
+    200: Color(0xFF8E7166),
+    300: Color(0xFF724C3D),
+    400: Color(0xFF5B2C1A),
+    500: Color(_error),
+    550: Color(0xFF56271A),
+    600: Color(0xFF4E281A),
+    700: Color(0xFF42251A),
+    800: Color(0xFF35211A),
+    900: Color(0xFF281E1A),
+  });
+
+  static const int _darkFern = 0xFF283324;
+  static const MaterialColor darkFern = MaterialColor(_darkFern, <int, Color>{
+    50: Color(0xFFC0C2BF),
+    100: Color(0xFF9EA29C),
+    200: Color(0xFF7C827A),
+    300: Color(0xFF5B6358),
+    400: Color(0xFF3E483A),
+    500: Color(_darkFern),
+    550: Color(0xFF394335),
+    600: Color(0xFF373F34),
+    700: Color(0xFF30362E),
+    800: Color(0xFF292D27),
+    900: Color(0xFF222421),
+  });
+
+  static const int _sageGreen = 0xFF818F75;
+  static const MaterialColor sageGreen = MaterialColor(_sageGreen, <int, Color>{
+    50: Color(0xFFD1D4CF),
+    100: Color(0xFFC0C5BB),
+    200: Color(0xFFAEB5A7),
+    300: Color(0xFF9CA693),
+    400: Color(0xFF8F9C84),
+    500: Color(_sageGreen),
+    550: Color(0xFF8A977F),
+    600: Color(0xFF78826F),
+    700: Color(0xFF61695A),
+    800: Color(0xFF4A5046),
+    900: Color(0xFF333631),
+  });
+
+  static const int _goldenBeige = 0xFFF1DDBA;
+  static const MaterialColor goldenBeige =
+      MaterialColor(_goldenBeige, <int, Color>{
+        50: Color(0xFFE6E4DD),
+        100: Color(0xFFE6E3C3),
+        200: Color(0xFFE6E2D5),
+        300: Color(0xFFE6E1CD),
+        400: Color(0xFFE6DFC6),
+        500: Color(_goldenBeige),
+        550: Color(0xFFE6DEBE),
+        600: Color(0xFFCABCA2),
+        700: Color(0xFF9F9481),
+        800: Color(0xFF756D60),
+        900: Color(0xFF4A463F),
+      });
+
+  static const int _caramelTan = 0xFFC99669;
+  static const MaterialColor caramelTan =
+      MaterialColor(_caramelTan, <int, Color>{
+        50: Color(0xFFE0D6CD),
+        100: Color(0xFFDBC7B6),
+        200: Color(0xFFD6B9A0),
+        300: Color(0xFFD1AB8A),
+        400: Color(0xFFD1A279),
+        500: Color(_caramelTan),
+        550: Color(0xFFCC9D74),
+        600: Color(0xFFAD8867),
+        700: Color(0xFF896D54),
+        800: Color(0xFF655241),
+        900: Color(0xFF42382E),
+      });
+
+  static const int _darkWalnut = 0xFF4E270B;
+  static const MaterialColor darkWalnut =
+      MaterialColor(_darkWalnut, <int, Color>{
+        50: Color(0xFFC7BFBA),
+        100: Color(0xFFAC9E93),
+        200: Color(0xFF917C6C),
+        300: Color(0xFF765A45),
+        400: Color(0xFF613D24),
+        500: Color(_darkWalnut),
+        550: Color(0xFF5B381E),
+        600: Color(0xFF533622),
+        700: Color(0xFF452F20),
+        800: Color(0xFF37281E),
+        900: Color(0xFF29211C),
+      });
+
+  static const int _cinnamonBrown = 0xFF764024;
+  static const MaterialColor cinnamonBrown =
+      MaterialColor(_cinnamonBrown, <int, Color>{
+        50: Color(0xFFCFC4BF),
+        100: Color(0xFFBBA79C),
+        200: Color(0xFFA88A7A),
+        300: Color(0xFF946C58),
+        400: Color(0xFF85543A),
+        500: Color(_cinnamonBrown),
+        550: Color(0xFF804F35),
+        600: Color(0xFF704834),
+        700: Color(0xFF5B3D2E),
+        800: Color(0xFF463227),
+        900: Color(0xFF312621),
+      });
+
+  static const int _stoneBeige = 0xFFB5B2A1;
+  static const MaterialColor stoneBeige =
+      MaterialColor(_stoneBeige, <int, Color>{
+        50: Color(0xFFDCDBD8),
+        100: Color(0xFFD3D2CC),
+        200: Color(0xFFCBC9BF),
+        300: Color(0xFFC2C0B3),
+        400: Color(0xFFBEBCAC),
+        500: Color(_stoneBeige),
+        550: Color(0xFFB9B7A7),
+        600: Color(0xFF9E9C90),
+        700: Color(0xFF7E7C73),
+        800: Color(0xFF5E5D56),
+        900: Color(0xFF3E3D3A),
+      });
+
+  static const int _camelBeige = 0xFFBAA48C;
+  static const MaterialColor camelBeige =
+      MaterialColor(_camelBeige, <int, Color>{
+        50: Color(0xFFDDD8D4),
+        100: Color(0xFFD5CDC4),
+        200: Color(0xFFCDC1B4),
+        300: Color(0xFFC6B5A4),
+        400: Color(0xFFC3AF99),
+        500: Color(_camelBeige),
+        550: Color(0xFFBEAA94),
+        600: Color(0xFFA29280),
+        700: Color(0xFF817567),
+        800: Color(0xFF60574E),
+        900: Color(0xFF3F3A35),
+      });
+  static const int _pineTeal = 0xFF3E6061;
+  static const MaterialColor pineTeal = MaterialColor(_pineTeal, <int, Color>{
+    50: Color(0xFFC4CBCB),
+    100: Color(0xFFA6B3B3),
+    200: Color(0xFF889B9C),
+    300: Color(0xFF6B8484),
+    400: Color(0xFF527172),
+    500: Color(_pineTeal),
+    550: Color(0xFF4D6C6D),
+    600: Color(0xFF476061),
+    700: Color(0xFF3C4F4F),
+    800: Color(0xFF313E3E),
+    900: Color(0xFF262D2D),
+  });
+
+  static const int _earthBrown = 0xFF34240B;
+  static const MaterialColor earthBrown =
+      MaterialColor(_earthBrown, <int, Color>{
+        50: Color(0xFFC2BFBA),
+        100: Color(0xFFA29C93),
+        200: Color(0xFF837A6C),
+        300: Color(0xFF635845),
+        400: Color(0xFF493A24),
+        500: Color(_earthBrown),
+        550: Color(0xFF44351E),
+        600: Color(0xFF403422),
+        700: Color(0xFF362E20),
+        800: Color(0xFF2D271E),
+        900: Color(0xFF24211C),
+      });
+
   static const MaterialColor redPrimary =
       MaterialColor(0xffFF002B, <int, Color>{
         50: Color(0xFFFFEBEE),
@@ -167,7 +338,7 @@ abstract class AppColors {
   // new colors
 
   static const Color white = Color(0xffFFFFFF);
-  static const Color error = Color(0xffe61f34); // red color
+  //! static const Color error = Color(0xffe61f34); // red color
 }
 
 class GradientManager {
