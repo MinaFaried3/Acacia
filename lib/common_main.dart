@@ -50,6 +50,7 @@ Future<Widget> initMain(AppConfig child) async {
 
   // ErrorWidget.builder = (error) => NotFoundPage(error: error);
   //
+
   await DIModulesManger.prepareAppModule();
   //
   // AppNotificationService.initNotification();
@@ -84,6 +85,4 @@ Future<Widget> initMain(AppConfig child) async {
     fallbackLocale: LocalizationManager.englishLocal,
     child: child,
   );
-
-  return child;
 }

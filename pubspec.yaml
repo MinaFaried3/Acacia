@@ -62,7 +62,6 @@ dependencies:
   firebase_crashlytics: 4.3.5
   firebase_analytics: 11.4.5
   firebase_auth: 5.5.3
-  firebase_storage: 12.4.5
 #  firebase_remote_config:
 #  firebase_messaging: 14.0.7
 
@@ -90,6 +89,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.8
+  file_picker: ^10.3.1
 
 
 
@@ -178,14 +178,10 @@ flutter:
 
   assets:
     - assets/fonts/fustat/
-    - assets/translations/
-    - assets/
-    - assets/fonts/
     - assets/fonts/caesar_dressing/
+    - assets/translations/
     - assets/icons/
-    - assets/icons/logo/
-    - assets/images/
+    - assets/icons/pharaohs/
     - assets/images/logo/
-    - assets/animation/
     - assets/animation/lottie/
 
