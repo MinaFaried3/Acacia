@@ -1,8 +1,8 @@
-import 'package:acacia/presentation/widgets/animation/route/slide_page_route.dart';
+import 'package:acacia/presentation/ui/animation/route/slide_page_route.dart';
 import 'package:flutter/material.dart';
 
-class BottomSlidePageRoute extends SlidePageRoute {
-  BottomSlidePageRoute({
+class RightSlidePageRoute extends SlidePageRoute {
+  RightSlidePageRoute({
     required super.builder,
     super.duration,
     super.reverseDuration,
@@ -11,25 +11,24 @@ class BottomSlidePageRoute extends SlidePageRoute {
     super.voiceLabel,
   }) : super(
          tweenOffset: Tween<Offset>(
-           begin: const Offset(0, 1),
+           begin: const Offset(1, 0),
            end: Offset.zero,
          ),
        );
 }
 
-class BottomSlideTransitionPage<T> extends SlideTransitionPage<T> {
-  BottomSlideTransitionPage({
+class RightSlideTransitionPage<T> extends SlideTransitionPage<T> {
+  RightSlideTransitionPage({
     required super.key,
     required super.child,
     super.duration,
     super.reverseDuration,
     super.curve,
-    super.alignment,
     super.barrierColor,
     super.barrierLabel,
   }) : super(
          tweenOffset: Tween<Offset>(
-           begin: const Offset(0, 1),
+           begin: const Offset(1, 0),
            end: Offset.zero,
          ),
        );

@@ -12,7 +12,7 @@ import 'package:acacia/presentation/modules/admin/product_details/product_detail
 import 'package:acacia/presentation/modules/shared/undefined/undefined_screen.dart';
 import 'package:acacia/presentation/resources/routes/routes_builder.dart';
 import 'package:acacia/presentation/resources/routes/routes_manager.dart';
-import 'package:acacia/presentation/widgets/animation/route/fade_page_route.dart';
+import 'package:acacia/presentation/ui/animation/route/fade_page_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

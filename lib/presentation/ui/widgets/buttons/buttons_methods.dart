@@ -2,7 +2,7 @@ import 'package:acacia/app/shared/helper_functions.dart';
 import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:acacia/presentation/resources/styles_manager.dart';
 import 'package:acacia/presentation/resources/values_manager.dart';
-import 'package:acacia/presentation/widgets/space.dart';
+import 'package:acacia/presentation/ui/widgets/space.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

@@ -1,7 +1,7 @@
 import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:acacia/presentation/resources/styles_manager.dart';
-import 'package:acacia/presentation/widgets/app_svg.dart';
-import 'package:acacia/presentation/widgets/space.dart';
+import 'package:acacia/presentation/ui/widgets/app_svg.dart';
+import 'package:acacia/presentation/ui/widgets/space.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

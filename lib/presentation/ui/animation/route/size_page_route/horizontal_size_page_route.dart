@@ -1,8 +1,8 @@
-import 'package:acacia/presentation/widgets/animation/route/size_page_route.dart';
+import 'package:acacia/presentation/ui/animation/route/size_page_route.dart';
 import 'package:flutter/material.dart';
 
-class VerticalSizePageRoute extends SizePageRoute {
-  VerticalSizePageRoute({
+class HorizontalSizePageRoute extends SizePageRoute {
+  HorizontalSizePageRoute({
     required super.builder,
     super.duration,
     super.reverseDuration,
@@ -10,11 +10,11 @@ class VerticalSizePageRoute extends SizePageRoute {
     super.voiceLabel,
     super.alignment,
     super.curve,
-  }) : super(axis: Axis.vertical);
+  }) : super(axis: Axis.horizontal);
 }
 
-class VerticalSizeTransitionPage<T> extends SizeTransitionPage<T> {
-  VerticalSizeTransitionPage({
+class HorizontalSizeTransitionPage<T> extends SizeTransitionPage<T> {
+  HorizontalSizeTransitionPage({
     required super.key,
     required super.child,
     super.duration,
@@ -23,5 +23,5 @@ class VerticalSizeTransitionPage<T> extends SizeTransitionPage<T> {
     super.barrierLabel, // ✅ replaces voiceLabel
     super.alignment,
     super.curve,
-  }) : super(axis: Axis.vertical);
+  }) : super(axis: Axis.horizontal);
 }

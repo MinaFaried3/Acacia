@@ -1,8 +1,8 @@
 import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:acacia/presentation/resources/styles_manager.dart';
 import 'package:acacia/presentation/resources/values_manager.dart';
-import 'package:acacia/presentation/widgets/animation/lottie_animation/success_indicators.dart';
-import 'package:acacia/presentation/widgets/buttons/button.dart';
+import 'package:acacia/presentation/ui/animation/lottie_animation/success_indicators.dart';
+import 'package:acacia/presentation/ui/widgets/buttons/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

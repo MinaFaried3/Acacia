@@ -1,4 +1,4 @@
-import 'package:acacia/presentation/widgets/animation/lottie_animation/loading_indicator.dart';
+import 'package:acacia/presentation/ui/animation/lottie_animation/loading_indicator.dart';
 import 'package:flutter/material.dart';
 
 enum UiState { initial, loading, succeed, failed }

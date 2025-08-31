@@ -1,7 +1,7 @@
 import 'package:acacia/app/shared/common/constants.dart';
-import 'package:acacia/presentation/widgets/animation/lottie_animation/loading_indicator.dart';
-import 'package:acacia/presentation/widgets/buttons/button.dart';
-import 'package:acacia/presentation/widgets/buttons/outlined_button.dart';
+import 'package:acacia/presentation/ui/animation/lottie_animation/loading_indicator.dart';
+import 'package:acacia/presentation/ui/widgets/buttons/button.dart';
+import 'package:acacia/presentation/ui/widgets/buttons/outlined_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

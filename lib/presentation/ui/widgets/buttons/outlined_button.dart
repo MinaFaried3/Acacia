@@ -1,6 +1,6 @@
 import 'package:acacia/presentation/resources/values_manager.dart';
-import 'package:acacia/presentation/widgets/buttons/button_type_enum.dart';
-import 'package:acacia/presentation/widgets/buttons/buttons_methods.dart';
+import 'package:acacia/presentation/ui/widgets/buttons/button_type_enum.dart';
+import 'package:acacia/presentation/ui/widgets/buttons/buttons_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

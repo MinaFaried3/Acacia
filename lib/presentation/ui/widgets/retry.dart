@@ -1,8 +1,7 @@
 import 'package:acacia/presentation/resources/styles_manager.dart';
-import 'package:acacia/presentation/widgets/space.dart';
+import 'package:acacia/presentation/ui/responsive/FlexibleFitted.dart';
+import 'package:acacia/presentation/ui/widgets/space.dart';
 import 'package:flutter/material.dart';
-
-import 'responsive/FlexibleFitted.dart';
 
 class Retry extends StatelessWidget {
   const Retry({super.key, required this.onPressed, required this.text});

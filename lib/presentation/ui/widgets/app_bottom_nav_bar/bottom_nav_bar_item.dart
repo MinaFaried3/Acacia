@@ -1,4 +1,4 @@
-part of 'package:acacia/presentation/widgets/app_bottom_nav_bar/app_bottom_nav_bar.dart';
+part of 'package:acacia/presentation/ui/widgets/app_bottom_nav_bar/app_bottom_nav_bar.dart';
 
 final class BottomNavBarItem extends Equatable {
   final String iconPath;
