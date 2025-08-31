@@ -2,6 +2,7 @@ import 'package:acacia/app/shared/helper_functions.dart';
 import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:acacia/presentation/resources/responsive_manager.dart';
 import 'package:acacia/presentation/resources/values_manager.dart';
+import 'package:acacia/presentation/ui/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -114,7 +115,7 @@ class AppButton extends StatelessWidget {
           buttonType: buttonType,
           text: text,
           iconSize: iconSize,
-          fontSize: fontSize,
+          fontSize: fontSize?.toResponsive(context),
           matchFontColor: matchFontColor,
           fontColor: fontColor ?? Theme.of(context).colorScheme.surface,
           iconColor: iconColor,

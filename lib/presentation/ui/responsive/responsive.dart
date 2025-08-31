@@ -31,7 +31,7 @@ extension ScaleFactorFontSize on num {
 // responsive font size
 // (min , max) fontsize
 extension ResponsiveDoubleFontSize on double {
-  double responsive(BuildContext context) {
+  double toResponsive(BuildContext context) {
     double scaleFactor = getScaleFactor(context);
     double responsiveFontSize = scaleFactor * this;
 
@@ -43,7 +43,7 @@ extension ResponsiveDoubleFontSize on double {
 }
 
 extension ResponsiveIntFontSize on int {
-  double responsive(BuildContext context) {
-    return toDouble().responsive(context);
+  double toResponsive(BuildContext context) {
+    return toDouble().toResponsive(context);
   }
 }

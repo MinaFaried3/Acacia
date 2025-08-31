@@ -126,13 +126,16 @@ abstract class AppColors {
         900: Color(0xFF312621),
       });
 
+  static const Color stoneBeige300 = Color(0xFFC2C0B3);
+  static const Color stoneBeige100 = Color(0xFFD3D2CC);
+  static const Color stoneBeige50 = Color(0xFFDCDBD8);
   static const int _stoneBeige = 0xFFB5B2A1;
   static const MaterialColor stoneBeige =
       MaterialColor(_stoneBeige, <int, Color>{
-        50: Color(0xFFDCDBD8),
-        100: Color(0xFFD3D2CC),
+        50: stoneBeige50,
+        100: stoneBeige100,
         200: Color(0xFFCBC9BF),
-        300: Color(0xFFC2C0B3),
+        300: stoneBeige300,
         400: Color(0xFFBEBCAC),
         500: Color(_stoneBeige),
         550: Color(0xFFB9B7A7),
@@ -250,7 +253,7 @@ abstract class AppColors {
   static const Color freeGreenBgColor = Color(0xFFF5FFF7);
 
   // action colors
-  static const Color errorColor = Color(0xffFE8383);
+
   static const Color dividerColor = Color(0xffE9E9E9);
 
   //offWhite

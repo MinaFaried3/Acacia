@@ -17,7 +17,7 @@ abstract class AppConstants {
   static const int minPasswordLength = 8;
   static const int otpCodeLength = 4;
 
-  static const LanguageType defaultLang = LanguageType.english;
+  static const LanguageType defaultLang = LanguageType.arabic;
 
   static const String emailSample = 'example@gmail.com';
   static const String contactNumber = '+252634997722';

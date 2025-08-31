@@ -184,4 +184,8 @@ flutter:
     - assets/icons/pharaohs/
     - assets/images/logo/
     - assets/animation/lottie/
+    - assets/
+    - assets/fonts/
+    - assets/images/
+    - assets/animation/
 

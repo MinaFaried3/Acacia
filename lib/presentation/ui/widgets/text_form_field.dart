@@ -4,6 +4,7 @@ import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:acacia/presentation/resources/font_manager.dart';
 import 'package:acacia/presentation/resources/styles_manager.dart';
 import 'package:acacia/presentation/resources/values_manager.dart';
+import 'package:acacia/presentation/ui/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +23,6 @@ class AppTextFormField extends StatelessWidget {
     this.onTap,
     this.onFieldSubmitted,
     this.hintText,
-    this.prefix,
     this.suffix,
     this.outSideIcon,
     this.svgPrefixPath,
@@ -62,7 +62,6 @@ class AppTextFormField extends StatelessWidget {
   final String? hintText;
   final String? labelText;
   final String? svgPrefixPath;
-  final Widget? prefix;
   final Widget? suffix;
   final Widget? outSideIcon;
   final Iterable<String>? autofillHints;
@@ -103,11 +102,11 @@ class AppTextFormField extends StatelessWidget {
                 labelText!,
                 textAlign: TextAlign.start,
                 style: get400RegularStyle(
-                  color: AppColors.blackTextLightSecondary
+                  color: AppColors.cinnamonBrown[700]!
                     ..withValues(alpha: AppSize.s0_75),
                   fontSize: isTablet(context)
-                      ? AppSize.s12.sp
-                      : FontSize.s16.spMin,
+                      ? 14.sp.toResponsive(context)
+                      : 18.spMin.toResponsive(context),
                 ),
               ),
             ),
@@ -131,8 +130,8 @@ class AppTextFormField extends StatelessWidget {
           readOnly: readOnly,
           cursorWidth: AppSize.s1,
           style: get400RegularStyle(
-            color: AppColors.blackTextSecondary,
-            fontSize: AppSize.s16.spMin,
+            color: AppColors.earthBrown,
+            fontSize: 18.sp.toResponsive(context),
           ),
           textAlignVertical: TextAlignVertical.center,
           // For centering input vertically
@@ -144,38 +143,23 @@ class AppTextFormField extends StatelessWidget {
             ),
             counterStyle: get500MediumStyle(
               color: Theme.of(context).colorScheme.primary,
-              fontSize: isTablet(context) ? AppSize.s8.sp : FontSize.s10.spMin,
+              fontSize: isTablet(context)
+                  ? AppSize.s8.sp.toResponsive(context)
+                  : FontSize.s10.spMin.toResponsive(context),
             ),
-            prefixIcon: svgPrefixPath != null
-                ? Padding(
-                    padding: EdgeInsets.all(AppPadding.p6.sp),
-                    child: SvgPicture.asset(
-                      svgPrefixPath!,
-                      matchTextDirection: true,
-                      width: AppSize.s10,
-                      height: AppSize.s10,
-                      fit: BoxFit.cover,
-                      colorFilter: ColorFilter.mode(
-                        AppColors.offWhite..withValues(alpha: AppSize.s0_75),
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  )
-                : null,
+            prefixIcon: getPrefixIcon(),
             prefixIconConstraints: prefixIconConstrains,
-            prefix: svgPrefixPath == null ? prefix : null,
-            suffixIcon:
-                controller.isNotNull && controller?.text.isNotEmpty == true
-                ? suffix
-                : null,
+            suffixIcon: suffix,
             alignLabelWithHint: true,
             icon: outSideIcon,
             filled: true,
             fillColor: fillColor,
             hintText: hintText,
             hintStyle: get400RegularStyle(
-              color: AppColors.offWhite500.withValues(alpha: AppSize.s0_75),
-              fontSize: isTablet(context) ? AppSize.s10.sp : AppSize.s12.spMin,
+              color: AppColors.camelBeige,
+              fontSize: isTablet(context)
+                  ? AppSize.s10.sp.toResponsive(context)
+                  : AppSize.s12.spMin.toResponsive(context),
             ),
             border:
                 border ??
@@ -192,7 +176,7 @@ class AppTextFormField extends StatelessWidget {
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: borderRadius,
               borderSide: BorderSide(
-                color: AppColors.errorColor,
+                color: AppColors.error,
                 width: AppSize.s2.sp,
               ),
             ),
@@ -205,12 +189,12 @@ class AppTextFormField extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: borderRadius,
               borderSide: BorderSide(
-                color: AppColors.bluePrimary,
+                color: AppColors.sageGreen,
                 width: AppSize.s2.sp,
               ),
             ),
           ),
-          cursorColor: AppColors.redPrimary,
+          cursorColor: AppColors.cinnamonBrown,
           focusNode: focusNode,
 
           validator: errorMessage == null ? validator : null,
@@ -223,12 +207,29 @@ class AppTextFormField extends StatelessWidget {
             child: Text(
               "$errorMessage",
               textAlign: TextAlign.start,
-              style: TextStyle(color: AppColors.errorColor),
+              style: TextStyle(color: AppColors.error),
             ),
           ),
         ],
       ],
     );
+  }
+
+  Widget? getPrefixIcon() {
+    return svgPrefixPath.isNotNull
+        ? Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
+            child: SvgPicture.asset(
+              svgPrefixPath!,
+              matchTextDirection: true,
+              fit: BoxFit.contain,
+              colorFilter: ColorFilter.mode(
+                AppColors.camelBeige,
+                BlendMode.srcIn,
+              ),
+            ),
+          )
+        : null;
   }
 
   int? _getFieldLength() {

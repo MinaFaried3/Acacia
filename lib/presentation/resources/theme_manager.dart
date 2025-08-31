@@ -17,16 +17,16 @@ import 'package:go_router/go_router.dart';
 import 'font_manager.dart';
 
 class ThemeManger {
-  static const ColorScheme colorScheme = ColorScheme(
+  static final ColorScheme colorScheme = ColorScheme(
     //primary main color for selected and elevated text and indicator
-    primary: AppColors.redPrimary,
+    primary: AppColors.sageGreen,
     //color of icons on primary color
-    onPrimary: AppColors.lightGreyBgSecondary,
+    onPrimary: AppColors.cinnamonBrown,
     //color of backgrounds like avatar of flouting buttons
-    primaryContainer: AppColors.orangeSecondary,
+    primaryContainer: AppColors.caramelTan,
     // color of icon on onPrimary
     onPrimaryContainer: AppColors.offWhite300,
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
     //color of background
     surface: AppColors.whiteTextColor,
 
@@ -35,16 +35,16 @@ class ThemeManger {
     tertiaryContainer: AppColors.offWhite200,
 
     //color for am or pm in time picker
-    onTertiaryContainer: AppColors.lightGreyBgSecondary,
+    onTertiaryContainer: AppColors.camelBeige,
 
     //outline color in date picker under the date and  dividers or decorative elements.
     outlineVariant: AppColors.lightGreyBgSecondary,
 
     //color of all borders and color of dot switch
-    outline: AppColors.lightGreyBgSecondary,
+    outline: AppColors.stoneBeige,
 
     //input validation errors InputDecoration.errorText.
-    error: AppColors.red700,
+    error: AppColors.error,
 
     //mix with surface color
     surfaceTint: null,
@@ -54,26 +54,26 @@ class ThemeManger {
     //color of hour on time picker and back color of linear indicator, back ground of false switch
     surfaceContainerHighest: AppColors.orangeSecondary,
     //like snackBar for background
-    inverseSurface: AppColors.redPrimary,
+    inverseSurface: AppColors.darkWalnut,
     shadow: AppColors.lightOffWhite,
 
     //unused
     //appbar back ground you make
     inversePrimary: AppColors.lightGreyBgSecondary,
     //colors of borders on background
-    onSurface: AppColors.redPrimary,
+    onSurface: AppColors.darkFern[400]!,
     //secondary
-    secondary: AppColors.yellow,
-    secondaryContainer: AppColors.yellow300,
-    onSecondary: AppColors.grey,
-    onSecondaryContainer: AppColors.yellow1000,
+    secondary: AppColors.goldenBeige,
+    secondaryContainer: AppColors.goldenBeige[300],
+    onSecondary: AppColors.caramelTan,
+    onSecondaryContainer: AppColors.caramelTan[900],
 
     //error
-    onError: AppColors.red300,
-    errorContainer: AppColors.red400,
-    onErrorContainer: AppColors.red900,
+    onError: AppColors.error[300]!,
+    errorContainer: AppColors.error[400],
+    onErrorContainer: AppColors.error[900],
     //surface
-    onInverseSurface: AppColors.grey400,
+    onInverseSurface: AppColors.stoneBeige[400],
     //tertiary
     onTertiary: AppColors.lightGreyBgSecondary,
     //scrim
@@ -166,7 +166,7 @@ class ThemeManger {
   static final OutlinedButtonThemeData outlinedButtonThemeData =
       OutlinedButtonThemeData(
         style: ButtonStyle(
-          foregroundColor: const WidgetStatePropertyAll(AppColors.errorColor),
+          foregroundColor: const WidgetStatePropertyAll(AppColors.error),
           side: const WidgetStatePropertyAll(
             BorderSide(color: AppColors.whiteBgColor),
           ),
@@ -205,71 +205,71 @@ class ThemeManger {
   static final TextTheme textTheme = TextTheme(
     //headlines
     headlineLarge: get800ExtraBoldStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s28.sp,
     ),
     headlineMedium: get700BoldStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s26.sp,
     ),
     headlineSmall: get600SemiBoldStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s20.sp,
     ),
 
     //titles
     titleLarge: get600SemiBoldStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s28.sp,
     ),
     titleMedium: get400RegularStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s26.sp,
     ),
     titleSmall: get500MediumStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s20.sp,
     ),
 
     //displays
     displayLarge: get400RegularStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s28.sp,
     ),
     displayMedium: get500MediumStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s26.sp,
     ),
     displaySmall: get300LightStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s20.sp,
     ),
 
     //bodies
     bodyLarge: get400RegularStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s22.sp,
     ),
     bodyMedium: get500MediumStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s15.sp,
     ),
     bodySmall: get300LightStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s14.sp,
     ),
 
     //labels
     labelLarge: get500MediumStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s28.sp,
     ),
     labelMedium: get300LightStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s26.sp,
     ),
     labelSmall: get200ExtraLightStyle(
-      color: AppColors.blackTextSecondary,
+      color: AppColors.earthBrown,
       fontSize: FontSize.s20.sp,
     ),
   );
@@ -342,11 +342,11 @@ class ThemeManger {
 ThemeData getApplicationTheme() {
   return ThemeData(
     useMaterial3: true,
-    brightness: Brightness.dark,
+    brightness: ThemeManger.colorScheme.brightness,
     // main colors
     colorScheme: ThemeManger.colorScheme,
     primaryColor: AppColors.redPrimary,
-    primaryColorLight: AppColors.errorColor,
+    primaryColorLight: AppColors.error,
     focusColor: AppColors.thistle,
     primaryColorDark: AppColors.mauva,
     disabledColor: AppColors.grey1,

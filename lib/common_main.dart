@@ -79,7 +79,6 @@ Future<Widget> initMain(AppConfig child) async {
     ],
     path: LocalizationManager.assetsPath,
     startLocale: LocalizationManager.getLangLocal(
-      //TOdo
       AppConstants.defaultLang.getLangWithCountry(),
     ),
     fallbackLocale: LocalizationManager.englishLocal,
