@@ -1,7 +1,7 @@
-import 'package:acacia/app/shared/helper_functions.dart';
 import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:acacia/presentation/resources/styles_manager.dart';
 import 'package:acacia/presentation/resources/values_manager.dart';
+import 'package:acacia/presentation/ui/responsive/responsive.dart';
 import 'package:acacia/presentation/ui/widgets/space.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -87,7 +87,7 @@ Widget buildText(
   return FittedBox(
     child: Text(
       text,
-      style: buildStyle(context, buttonType, fontColor, fontSize?.sp),
+      style: buildStyle(context, buttonType, fontColor, fontSize),
       textAlign: TextAlign.center,
       softWrap: false,
       maxLines: 1,
@@ -102,9 +102,7 @@ TextStyle buildStyle(
   Color fontColor,
   double? fontSize,
 ) {
-  double responsiveFontSize = (isTablet(context)
-      ? AppSize.s12.sp
-      : AppSize.s16.spMin);
+  double responsiveFontSize = 16.toResponsive(context);
   switch (buttonType) {
     case ButtonContentType.text:
       return get500MediumStyle(

@@ -1,5 +1,5 @@
 name: acacia
-description: "A new Flutter project."
+description: "acacia for fragrances"
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -77,8 +77,6 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   flutter_secure_storage: ^9.2.4
-  # caching
-#  cached_network_image: ^3.4.1
 
   # for ios
   app_tracking_transparency: ^2.0.6+1

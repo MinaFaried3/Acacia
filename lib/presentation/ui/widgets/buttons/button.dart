@@ -1,6 +1,4 @@
-import 'package:acacia/app/shared/helper_functions.dart';
 import 'package:acacia/presentation/resources/color_manager.dart';
-import 'package:acacia/presentation/resources/responsive_manager.dart';
 import 'package:acacia/presentation/resources/values_manager.dart';
 import 'package:acacia/presentation/ui/responsive/responsive.dart';
 import 'package:flutter/material.dart';
@@ -90,18 +88,9 @@ class AppButton extends StatelessWidget {
             fontColor ?? Theme.of(context).colorScheme.surfaceContainerHighest,
           ),
           fixedSize: WidgetStatePropertyAll(
-            Size(
-              width ?? double.infinity,
-              height ??
-                  (isTablet(context) ? AppSize.s48.spMin : AppSize.s48.sp),
-            ),
+            Size(width ?? double.infinity, height ?? 48.toResponsive(context)),
           ),
-          maximumSize: WidgetStatePropertyAll(
-            Size(
-              ContextManager(context, hasAppBar: false).screenWidth,
-              (isTablet(context) ? AppSize.s48.sp : AppSize.s48.sp),
-            ),
-          ),
+
           shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(
               side: borderSide,

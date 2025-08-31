@@ -1,6 +1,4 @@
-import 'package:acacia/presentation/modules/admin/login/widgets/form_header.dart';
 import 'package:acacia/presentation/modules/admin/login/widgets/login_form.dart';
-import 'package:acacia/presentation/ui/widgets/space.dart';
 import 'package:flutter/material.dart';
 
 class MobileAdminLogin extends StatelessWidget {
@@ -9,23 +7,7 @@ class MobileAdminLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                //welcome message
-                FormHeaderMessage(),
-                VerticalSpace(60),
-                //form inputs
-                LoginForm(),
-              ],
-            ),
-          ),
-        ),
-      ),
+      body: Padding(padding: const EdgeInsets.all(20.0), child: LoginForm()),
     );
     // return Scaffold(
     //   appBar: AppBar(title: const Text('Login Screen')),
