@@ -1,6 +1,5 @@
-import 'package:acacia/generated/assets.dart';
 import 'package:acacia/presentation/modules/admin/login/widgets/form_header.dart';
-import 'package:acacia/presentation/ui/widgets/text_form_field.dart';
+import 'package:acacia/presentation/modules/admin/login/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 
 class DesktopAdminLogin extends StatelessWidget {
@@ -21,7 +20,7 @@ class DesktopAdminLogin extends StatelessWidget {
                     FormHeaderMessage(),
 
                     //form inputs
-                    AppTextFormField(svgPrefixPath: Assets.iconsSms),
+                    LoginForm(),
                   ],
                 ),
               ),

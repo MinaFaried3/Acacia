@@ -93,8 +93,8 @@ class AppTextFormField extends StatelessWidget {
         if (labelText != null)
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: AppSize.s8.w,
-              vertical: AppSize.s4.h,
+              horizontal: AppSize.s8,
+              vertical: AppSize.s4,
             ),
             child: FittedBox(
               alignment: AlignmentDirectional.centerStart,
@@ -105,8 +105,8 @@ class AppTextFormField extends StatelessWidget {
                   color: AppColors.cinnamonBrown[700]!
                     ..withValues(alpha: AppSize.s0_75),
                   fontSize: isTablet(context)
-                      ? 14.sp.toResponsive(context)
-                      : 18.spMin.toResponsive(context),
+                      ? 18.toResponsive(context)
+                      : 22.toResponsive(context),
                 ),
               ),
             ),
@@ -131,21 +131,21 @@ class AppTextFormField extends StatelessWidget {
           cursorWidth: AppSize.s1,
           style: get400RegularStyle(
             color: AppColors.earthBrown,
-            fontSize: 18.sp.toResponsive(context),
+            fontSize: 22.toResponsive(context),
           ),
           textAlignVertical: TextAlignVertical.center,
           // For centering input vertically
           decoration: InputDecoration(
             isDense: true,
             contentPadding: EdgeInsets.symmetric(
-              vertical: AppPadding.p14.h,
-              horizontal: AppPadding.p8.w,
+              vertical: AppPadding.p14,
+              horizontal: AppPadding.p8,
             ),
             counterStyle: get500MediumStyle(
               color: Theme.of(context).colorScheme.primary,
               fontSize: isTablet(context)
-                  ? AppSize.s8.sp.toResponsive(context)
-                  : FontSize.s10.spMin.toResponsive(context),
+                  ? AppSize.s8.toResponsive(context)
+                  : FontSize.s10.toResponsive(context),
             ),
             prefixIcon: getPrefixIcon(),
             prefixIconConstraints: prefixIconConstrains,
@@ -158,8 +158,8 @@ class AppTextFormField extends StatelessWidget {
             hintStyle: get400RegularStyle(
               color: AppColors.camelBeige,
               fontSize: isTablet(context)
-                  ? AppSize.s10.sp.toResponsive(context)
-                  : AppSize.s12.spMin.toResponsive(context),
+                  ? 12.toResponsive(context)
+                  : 16.toResponsive(context),
             ),
             border:
                 border ??
@@ -175,10 +175,7 @@ class AppTextFormField extends StatelessWidget {
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: borderRadius,
-              borderSide: BorderSide(
-                color: AppColors.error,
-                width: AppSize.s2.sp,
-              ),
+              borderSide: BorderSide(color: AppColors.error, width: AppSize.s2),
             ),
             enabledBorder:
                 border ??
@@ -190,7 +187,7 @@ class AppTextFormField extends StatelessWidget {
               borderRadius: borderRadius,
               borderSide: BorderSide(
                 color: AppColors.sageGreen,
-                width: AppSize.s2.sp,
+                width: AppSize.s2,
               ),
             ),
           ),
@@ -201,9 +198,9 @@ class AppTextFormField extends StatelessWidget {
           onChanged: onChanged,
         ),
         if (errorMessage != null) ...[
-          SizedBox(height: 8.h),
+          SizedBox(height: 8),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            padding: EdgeInsets.symmetric(horizontal: 8),
             child: Text(
               "$errorMessage",
               textAlign: TextAlign.start,

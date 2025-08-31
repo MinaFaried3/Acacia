@@ -15,7 +15,10 @@ class AdaptiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constrains) {
-        if (desktopLayout.isNotNull && constrains.maxWidth > 1200) {
+        final desktopBreakPoint = tabletLayout.isNull ? 800 : 1200;
+
+        if (desktopLayout.isNotNull &&
+            constrains.maxWidth > desktopBreakPoint) {
           return desktopLayout!(context);
         } else if (tabletLayout.isNotNull && constrains.maxWidth > 700) {
           return tabletLayout!(context);
