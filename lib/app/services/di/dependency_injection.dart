@@ -1,7 +1,9 @@
 import 'package:acacia/app/app_cubit.dart';
 import 'package:acacia/app/shared/common/printer_manager.dart';
 import 'package:bloc/bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
@@ -25,6 +27,12 @@ final class DIModulesManger {
     );
     getIt.registerLazySingleton<FirebaseCrashlytics>(
       () => FirebaseCrashlytics.instance,
+    );
+
+    getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
+
+    getIt.registerLazySingleton<FirebaseFirestore>(
+      () => FirebaseFirestore.instance,
     );
 
     // getIt.registerLazySingleton<AppRemoteConfig>(() => AppRemoteConfig(

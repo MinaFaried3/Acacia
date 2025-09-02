@@ -40,6 +40,27 @@ final class FailureCode {
 
   ///permission [-201] for [-220]
   static const int locationNotWorking = -222;
+
+  // --- 4xx: Client Errors ---
+  static const int badRequest = 400; // Invalid request
+  static const int unauthorized = 401; // Authentication required
+  static const int forbidden = 403; // Authenticated but no permission
+  static const int notFound = 404; // Resource not found
+  static const int methodNotAllowed = 405; // Wrong HTTP method
+  static const int requestTimeout = 408; // Request timeout
+  static const int conflict = 409; // Conflict (e.g., duplicate entry)
+  static const int gone = 410; // Resource permanently removed
+  static const int payloadTooLarge = 413; // File/body too large
+  static const int unsupportedMediaType = 415; // Wrong content type
+  static const int tooManyRequests = 429; // Rate limiting
+
+  // --- 5xx: Server Errors ---
+  static const int internalServerError = 500; // Generic server error
+  static const int notImplemented = 501; // API not implemented
+  static const int badGateway = 502; // Invalid response from upstream
+  static const int serviceUnavailable = 503; // Server overloaded/down
+  static const int gatewayTimeout = 504; // Timeout from upstream
+  static const int httpVersionNotSupported = 505; // HTTP version issue
 }
 
 class ServerFailure extends Failure {
@@ -136,6 +157,86 @@ class UnKnownFailure extends Failure {
 class LocationFailure extends Failure {
   const LocationFailure({
     super.code = FailureCode.locationNotWorking,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class ConflictFailure extends Failure {
+  const ConflictFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class TooManyRequestsFailure extends Failure {
+  const TooManyRequestsFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class PreconditionFailedFailure extends Failure {
+  const PreconditionFailedFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class ResourceExhaustedFailure extends Failure {
+  const ResourceExhaustedFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class AbortedFailure extends Failure {
+  const AbortedFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class DeadlineExceededFailure extends Failure {
+  const DeadlineExceededFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class AlreadyExistsFailure extends Failure {
+  const AlreadyExistsFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class UnauthenticatedFailure extends Failure {
+  const UnauthenticatedFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class CancelFailure extends Failure {
+  const CancelFailure({
+    required super.code,
+    required super.message,
+    super.appErrors,
+  });
+}
+
+class ServiceUnavailableFailure extends Failure {
+  const ServiceUnavailableFailure({
+    required super.code,
     required super.message,
     super.appErrors,
   });

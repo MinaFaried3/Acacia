@@ -1,12 +1,12 @@
 import 'package:acacia/app/shared/common/printer_manager.dart';
 import 'package:acacia/app/shared/extensions/not_nullable_extensions.dart';
+import 'package:acacia/data/network/error/api/data_source_status.dart';
 import 'package:acacia/data/responses/base_response/error_response.dart';
 import 'package:acacia/presentation/resources/strings_manager.dart';
 import 'package:dio/dio.dart';
 
-import 'app_error.dart';
-import 'app_failures.dart';
-import 'data_source_status.dart';
+import '../app_error.dart';
+import '../app_failures.dart';
 
 class ErrorHandler implements Exception {
   late final Failure failure;

@@ -4,6 +4,11 @@ abstract class AppStrings {
   // menu
   static const String appTitle = 'app_title';
 
+  //role
+  static const String admin = 'Admin';
+  static const String customer = 'Customer';
+  static const String guest = 'Guest';
+
   //admin login
   static const String welcomeAtAcacia = 'welcomeAtAcacia';
   static const String enterFollowingData = 'enterFollowingData';

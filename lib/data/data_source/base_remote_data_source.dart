@@ -1,7 +1,10 @@
-abstract class BaseRemoteDataSource<T> {
-  final T apiServiceClient;
+import 'package:firebase_auth/firebase_auth.dart';
 
-  const BaseRemoteDataSource({
-    required this.apiServiceClient,
+abstract class BaseBaseRemoteDataSource {
+  const BaseBaseRemoteDataSource();
+
+  Future<UserCredential> login({
+    required String email,
+    required String password,
   });
 }

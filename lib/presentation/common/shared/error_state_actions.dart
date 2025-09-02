@@ -61,6 +61,36 @@ void errorStateActions(BuildContext context, BaseState state) {
     case UnKnownFailure():
       printer('UnKnownFailure');
     // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+    case ConflictFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case TooManyRequestsFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case PreconditionFailedFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case ResourceExhaustedFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case AbortedFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case DeadlineExceededFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case AlreadyExistsFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case UnauthenticatedFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case CancelFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
+    case ServiceUnavailableFailure():
+      // TODO: Handle this case.
+      throw UnimplementedError();
   }
 }
 
