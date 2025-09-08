@@ -1,4 +1,4 @@
-import 'package:acacia/presentation/resources/routes/enhanced_go_route.dart';
+import 'package:acacia/presentation/resources/routes/router/enhanced_go_route.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

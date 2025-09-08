@@ -1,5 +1,5 @@
 import 'package:acacia/app/shared/enums/user_role.dart';
-import 'package:acacia/presentation/resources/routes/route_data.dart';
+import 'package:acacia/presentation/resources/routes/router/route_data.dart';
 
 abstract class RoutesNames {
   static const String unDefined = 'undefined';

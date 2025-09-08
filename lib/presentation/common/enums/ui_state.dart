@@ -73,12 +73,13 @@ extension UiStateX on UiState {
       case UiState.loading:
         if (loading != null) return loading();
         return Stack(
+          alignment: Alignment.center,
           children: [
             orElse(),
             Positioned.fill(
               child: Container(
-                color: Colors.white.withOpacity(
-                  0.75,
+                color: Colors.white.withValues(
+                  alpha: 0.75,
                 ), // Semi-transparent overlay.
               ),
             ),

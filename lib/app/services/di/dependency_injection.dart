@@ -1,5 +1,11 @@
 import 'package:acacia/app/app_cubit.dart';
+import 'package:acacia/app/config/platform/platform.dart';
 import 'package:acacia/app/shared/common/printer_manager.dart';
+import 'package:acacia/data/data_source/firebase_remote_data_source.dart';
+import 'package:acacia/data/data_source/local_data_source.dart';
+import 'package:acacia/data/network/network_checker.dart';
+import 'package:acacia/data/repositories/user_repository_impl.dart';
+import 'package:acacia/presentation/modules/admin/login/cubit/login_cubit.dart';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
@@ -7,6 +13,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import '../../shared/common/bloc_observer.dart' show MyBlocObserver;
 
@@ -18,8 +25,13 @@ final class DIModulesManger {
     getIt.allowReassignment = true;
 
     //network checker
-    // getIt.registerLazySingleton<NetworkChecker>(() =>
-    //     NetworkCheckerImpl(connectionChecker: InternetConnectionChecker()));
+    getIt.registerLazySingleton<NetworkChecker>(
+      () => NetworkCheckerImpl(
+        connectionChecker: currentPlatform.isNotWeb
+            ? InternetConnectionChecker()
+            : null,
+      ),
+    );
 
     //firebase
     getIt.registerLazySingleton<FirebaseAnalytics>(
@@ -95,16 +107,26 @@ final class DIModulesManger {
     //     () => ApiServiceClient(getDio));
     //
     // //remote data source
-    // getIt
-    //     .registerLazySingleton<UserRemoteDataSource>(() => UserRemoteDataSource(
-    //           apiServiceClient: getIt<ApiServiceClient>(),
-    //         ));
+    getIt.registerLazySingleton<FirebaseRemoteDataSource>(
+      () => FirebaseRemoteDataSource(
+        auth: getIt<FirebaseAuth>(),
+        firestore: getIt<FirebaseFirestore>(),
+      ),
+    );
     //
-    // //local data source
-    // getIt.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
+    //local data source
+    getIt.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
     //
     // //repository
-    //
+    getIt.registerLazySingleton<UserRepository>(
+      () => UserRepository(
+        remoteDataSource: getIt<FirebaseRemoteDataSource>(),
+        localDataSource: getIt<LocalDataSource>(),
+        networkChecker: currentPlatform.isNotWeb
+            ? getIt<NetworkChecker>()
+            : null,
+      ),
+    );
     // getIt.registerLazySingleton<Location>(() => Location());
     //
     // //cubit
@@ -157,5 +179,9 @@ final class DIModulesManger {
     if (!(GetIt.I.isRegistered<T>())) {
       printer('$T is unregistered');
     }
+  }
+
+  static void prepareLoginModule() {
+    _registerFactoryCubit<LoginCubit>(LoginCubit());
   }
 }

@@ -1,5 +1,6 @@
 import 'package:acacia/app/app.dart';
 import 'package:acacia/app/config/app_mode.dart';
+import 'package:acacia/app/services/di/dependency_injection.dart';
 import 'package:acacia/app/services/navigation/observers.dart';
 import 'package:acacia/app/shared/common/printer_manager.dart';
 import 'package:acacia/presentation/modules/admin/dashboard/cubit/dashboard_cubit.dart';
@@ -10,7 +11,9 @@ import 'package:acacia/presentation/modules/admin/priceList/price_list_screen.da
 import 'package:acacia/presentation/modules/admin/product/products_screen.dart';
 import 'package:acacia/presentation/modules/admin/product_details/product_details_screen.dart';
 import 'package:acacia/presentation/modules/shared/undefined/undefined_screen.dart';
-import 'package:acacia/presentation/resources/routes/routes_builder.dart';
+import 'package:acacia/presentation/resources/bloc_providers_manager.dart';
+import 'package:acacia/presentation/resources/routes/router/routes_builder.dart';
+import 'package:acacia/presentation/resources/routes/routes_builder_helber.dart';
 import 'package:acacia/presentation/resources/routes/routes_manager.dart';
 import 'package:acacia/presentation/ui/animation/route/fade_page_route.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +25,11 @@ final List<RouteBase> appRoutes = [
     builder: (context, state) => const UndefinedScreen(),
   ),
   Routes.adminLogin.toAppGoRoute(
-    builder: (context, state) => const AdminLoginScreen(),
+    builder: (context, state) => buildAppRoute(
+      prepareModule: DIModulesManger.prepareLoginModule,
+      providers: AppBlocProviders.loginProviders,
+      screen: (context) => const AdminLoginScreen(),
+    ),
   ),
 
   StatefulShellRoute.indexedStack(

@@ -1,3 +1,6 @@
+import 'package:acacia/presentation/common/enums/ui_state.dart';
+import 'package:acacia/presentation/common/shared/app_bloc_consumer.dart';
+import 'package:acacia/presentation/modules/admin/login/cubit/login_cubit.dart';
 import 'package:acacia/presentation/modules/admin/login/widgets/form_header.dart';
 import 'package:acacia/presentation/modules/admin/login/widgets/login_form_inputs.dart';
 import 'package:acacia/presentation/ui/widgets/space.dart';
@@ -9,17 +12,24 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //welcome message
-            FormHeaderMessage(),
-            VerticalSpace(60),
-            //form inputs
-            LoginFormInputs(),
-          ],
-        ),
+      child: AppBlocConsumer<LoginCubit, LoginState>(
+        builder: (context, state) {
+          return state.uiState.maybeWhenWidgets(
+            orElse: () => SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //welcome message
+                  FormHeaderMessage(),
+
+                  VerticalSpace(60),
+                  //form inputs
+                  LoginFormInputs(),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

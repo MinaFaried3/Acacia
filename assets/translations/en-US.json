@@ -4,5 +4,12 @@
   "enterFollowingData": "Please enter the following information",
   "email": "Email",
   "password": "Password",
-  "login": "Login"
+  "login": "Login",
+  "cannot_be_empty": "This field cannot be empty",
+  "phone_length_not_valid": "Phone number length is not valid",
+  "phone_not_valid": "Invalid phone number",
+  "email_not_valid": "Invalid email address",
+  "password_length_invalid": "Password must be at least 8 characters",
+  "password_invalid": "Invalid password",
+  "confirm_Password_invalid": "Password confirmation does not match"
 }

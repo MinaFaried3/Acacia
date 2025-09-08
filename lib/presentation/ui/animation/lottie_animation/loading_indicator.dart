@@ -1,5 +1,8 @@
+import 'package:acacia/generated/assets.dart';
 import 'package:acacia/presentation/resources/values_manager.dart';
+import 'package:acacia/presentation/ui/responsive/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoadingIndicator extends StatelessWidget {
   const LoadingIndicator({super.key, this.height, this.width});
@@ -10,11 +13,10 @@ class LoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: CircularProgressIndicator(
-        strokeWidth: AppSize.s1_5,
-        valueColor: AlwaysStoppedAnimation<Color>(
-          Theme.of(context).colorScheme.primary,
-        ),
+      child: Lottie.asset(
+        Assets.lottieLoading,
+        height: height ?? 70.toResponsive(context),
+        width: width,
       ),
     );
   }

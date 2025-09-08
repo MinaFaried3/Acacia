@@ -4,6 +4,12 @@
   "enterFollowingData": "برجاء ادخال البيانات التاليه ",
   "email": "البريد الإلكتروني ",
   "password": "كلمه المرور ",
-  "login": "تسجيل دخول "
-
+  "login": "تسجيل دخول ",
+  "cannot_be_empty": "هذا الحقل لا يمكن أن يكون فارغًا",
+  "phone_length_not_valid": "رقم الهاتف يجب أن يتكون من عدد صحيح من الأرقام",
+  "phone_not_valid": "رقم الهاتف غير صالح",
+  "email_not_valid": "البريد الإلكتروني غير صحيح",
+  "password_length_invalid": "كلمة المرور يجب أن تحتوي على 8 أحرف على الأقل",
+  "password_invalid": "كلمة المرور غير صحيحة",
+  "confirm_Password_invalid": "تأكيد كلمة المرور غير مطابق"
 }

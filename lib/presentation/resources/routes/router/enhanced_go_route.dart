@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:acacia/app/config/flavors/app_config.dart';
 import 'package:acacia/app/shared/enums/user_role.dart';
-import 'package:acacia/presentation/resources/routes/routes_builder.dart';
+import 'package:acacia/presentation/resources/routes/router/routes_builder.dart';
 import 'package:acacia/presentation/resources/routes/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

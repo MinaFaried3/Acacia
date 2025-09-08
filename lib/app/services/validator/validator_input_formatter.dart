@@ -1,43 +1,49 @@
-// import 'package:flutter/services.dart';
-// import 'package:speed_service/app/services/validator/string_validator.dart';
-//
-// class ValidatorInputFormatter extends TextInputFormatter {
-//   final StringValidator editingFormatter;
-//
-//   ValidatorInputFormatter({required this.editingFormatter});
-//
-//   @override
-//   TextEditingValue formatEditUpdate(
-//       TextEditingValue oldValue, TextEditingValue newValue) {
-//     final isOldValueValid = editingFormatter.isValid(oldValue.text);
-//     final isNewValueValid = editingFormatter.isValid(newValue.text);
-//
-//     if (isOldValueValid && !isNewValueValid) {
-//       return oldValue;
-//     }
-//
-//     return newValue;
-//   }
-// }
-//
-// class UpperCaseTextFormatter extends TextInputFormatter {
-//   @override
-//   TextEditingValue formatEditUpdate(
-//       TextEditingValue oldValue, TextEditingValue newValue) {
-//     return TextEditingValue(
-//       text: newValue.text.toUpperCase(),
-//       selection: newValue.selection,
-//     );
-//   }
-// }
-//
-// class LowerCaseTextFormatter extends TextInputFormatter {
-//   @override
-//   TextEditingValue formatEditUpdate(
-//       TextEditingValue oldValue, TextEditingValue newValue) {
-//     return TextEditingValue(
-//       text: newValue.text.toLowerCase(),
-//       selection: newValue.selection,
-//     );
-//   }
-// }
+import 'package:acacia/app/services/validator/string_validator.dart';
+import 'package:flutter/services.dart';
+
+class ValidatorInputFormatter extends TextInputFormatter {
+  final StringValidator editingFormatter;
+
+  ValidatorInputFormatter({required this.editingFormatter});
+
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    final isOldValueValid = editingFormatter.isValid(oldValue.text);
+    final isNewValueValid = editingFormatter.isValid(newValue.text);
+
+    if (isOldValueValid && !isNewValueValid) {
+      return oldValue;
+    }
+
+    return newValue;
+  }
+}
+
+class UpperCaseTextFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    return TextEditingValue(
+      text: newValue.text.toUpperCase(),
+      selection: newValue.selection,
+    );
+  }
+}
+
+class LowerCaseTextFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    return TextEditingValue(
+      text: newValue.text.toLowerCase(),
+      selection: newValue.selection,
+    );
+  }
+}

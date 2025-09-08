@@ -130,6 +130,7 @@ class Assets {
       'assets/images/logo/typo_logo_dark.png';
   static const String logoTypoLogoLight =
       'assets/images/logo/typo_logo_light.png';
+  static const String lottieLoading = 'assets/animation/lottie/loading.json';
   static const String pharaohsAmphora = 'assets/icons/pharaohs/amphora.svg';
   static const String pharaohsAnkh = 'assets/icons/pharaohs/ankh.svg';
   static const String pharaohsBoat = 'assets/icons/pharaohs/boat.svg';

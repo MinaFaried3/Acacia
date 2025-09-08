@@ -1,6 +1,7 @@
 import 'package:acacia/app/services/di/dependency_injection.dart';
 import 'package:acacia/app/shared/common/printer_manager.dart';
 import 'package:acacia/app/shared/common/typedefs.dart';
+import 'package:acacia/app/shared/extensions/empty_or_null.dart';
 import 'package:acacia/data/data_source/base_remote_data_source.dart';
 import 'package:acacia/data/data_source/local_data_source.dart';
 import 'package:acacia/data/network/dio_factory/dio_factory.dart';
@@ -16,7 +17,7 @@ import 'package:dartz/dartz.dart';
 abstract class BaseRepository {
   BaseBaseRemoteDataSource get remoteDataSource;
 
-  NetworkChecker get networkChecker;
+  NetworkChecker? get networkChecker;
 
   LocalDataSource get localDataSource;
 
@@ -49,7 +50,7 @@ abstract class BaseRepository {
   FailureOr<Model> runWithNetworkCheck<Model>({
     required FailureOr<Model> Function() action,
   }) async {
-    if (!await networkChecker.isConnected) {
+    if (networkChecker.isNotNull && !await networkChecker!.isConnected) {
       return Left(DataSourceStatus.noInternetConnection.getFailure());
     }
     return await action();
@@ -100,7 +101,7 @@ abstract class BaseRepository {
     required Future<BaseResponse> Function() apiCall,
     bool refreshDioOptions = false,
   }) async {
-    if (!await networkChecker.isConnected) {
+    if (networkChecker.isNotNull && !await networkChecker!.isConnected) {
       return Left(DataSourceStatus.noInternetConnection.getFailure());
     }
     await refreshDioOptionsIfNeeded(refreshDioOptions);
@@ -131,7 +132,7 @@ abstract class BaseRepository {
     required FutureBasePaginationRes<Model> Function() apiCall,
     bool refreshDioOptions = false,
   }) async {
-    if (!await networkChecker.isConnected) {
+    if (networkChecker.isNotNull && !await networkChecker!.isConnected) {
       return Left(DataSourceStatus.noInternetConnection.getFailure());
     }
     await refreshDioOptionsIfNeeded(refreshDioOptions);
@@ -160,7 +161,7 @@ abstract class BaseRepository {
     required Future<Model> Function() apiCall,
     bool refreshDioOptions = false,
   }) async {
-    if (!await networkChecker.isConnected) {
+    if (networkChecker.isNotNull && !await networkChecker!.isConnected) {
       return Left(DataSourceStatus.noInternetConnection.getFailure());
     }
     await refreshDioOptionsIfNeeded(refreshDioOptions);

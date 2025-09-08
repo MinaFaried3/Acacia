@@ -1,7 +1,7 @@
-import 'dart:io';
 import 'dart:ui';
 
 import 'package:acacia/app/config/flavors/app_config.dart';
+import 'package:acacia/app/config/platform/platform.dart';
 import 'package:acacia/app/services/di/dependency_injection.dart';
 import 'package:acacia/app/shared/common/printer_manager.dart';
 import 'package:acacia/data/network/error/app_failures.dart';
@@ -39,7 +39,7 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
         name: 'appOpened',
         parameters: {
           'flavor': AppConfig.instance.flavor.name,
-          'os': Platform.operatingSystem,
+          'os': AppConfig.instance.platform.name,
           'version': 'getIt<PackageInfo>().version',
           'buildNumber': 'getIt<PackageInfo>().buildNumber',
           'installerStore': 'getIt<PackageInfo>().buildSignature',
@@ -53,7 +53,10 @@ class AppCubit extends Cubit<AppState> with SafeEmitter<AppState> {
       //   loadRemoteConfigData();
       // });
     } catch (error) {
-      printer("ErrorFirebaseAnalytics", color: ConsoleColor.red);
+      printer(
+        "ErrorFirebaseAnalytics from app cubit $error",
+        color: ConsoleColor.red,
+      );
     }
   }
 

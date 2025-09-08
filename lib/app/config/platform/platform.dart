@@ -26,6 +26,7 @@ extension AppPlatformExtension on AppPlatform {
   bool get isAndroid => this == AppPlatform.android;
   bool get isIOS => this == AppPlatform.ios;
   bool get isWeb => this == AppPlatform.web;
+  bool get isNotWeb => this != AppPlatform.web;
   bool get isMacOS => this == AppPlatform.macos;
   bool get isWindows => this == AppPlatform.windows;
   bool get isLinux => this == AppPlatform.linux;
