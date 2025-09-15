@@ -1,5 +1,5 @@
 import 'package:acacia/generated/assets.dart';
-import 'package:acacia/presentation/ui/widgets/app_toast/content_type.dart';
+import 'package:acacia/presentation/ui/widgets/app_toast/toast_type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:ui' as ui;
@@ -9,7 +9,7 @@ class AppToast extends StatelessWidget {
   final String title;
   final String message;
   final Color? color;
-  final ContentType contentType;
+  final ToastType contentType;
   final bool inMaterialBanner;
   final TextStyle? titleTextStyle;
   final TextStyle? messageTextStyle;
@@ -93,13 +93,13 @@ class AppToast extends StatelessWidget {
             top: -size.height * 0.015,
             left: !isRTL
                 ? leftSpace -
-                    8 -
-                    (isMobile ? size.width * 0.075 : size.width * 0.035)
+                      8 -
+                      (isMobile ? size.width * 0.075 : size.width * 0.035)
                 : null,
             right: isRTL
                 ? rightSpace -
-                    8 -
-                    (isMobile ? size.width * 0.075 : size.width * 0.035)
+                      8 -
+                      (isMobile ? size.width * 0.075 : size.width * 0.035)
                 : null,
             child: Stack(
               alignment: Alignment.center,
@@ -138,7 +138,8 @@ class AppToast extends StatelessWidget {
                         flex: 3,
                         child: Text(
                           title,
-                          style: titleTextStyle ??
+                          style:
+                              titleTextStyle ??
                               TextStyle(
                                 fontSize: !isMobile ? 22 : 18,
                                 fontWeight: FontWeight.w600,
@@ -168,7 +169,8 @@ class AppToast extends StatelessWidget {
                   /// `message` body text parameter
                   Text(
                     message,
-                    style: messageTextStyle ??
+                    style:
+                        messageTextStyle ??
                         TextStyle(
                           fontSize: isMobile ? 14 : 16,
                           color: Colors.white,
@@ -188,15 +190,15 @@ class AppToast extends StatelessWidget {
   }
 
   /// Reflecting proper icon based on the contentType
-  String assetSVG(ContentType contentType) {
+  String assetSVG(ToastType contentType) {
     switch (contentType) {
-      case ContentType.failure:
+      case ToastType.failure:
         return Assets.iconsFailure;
-      case ContentType.success:
+      case ToastType.success:
         return Assets.iconsSuccess;
-      case ContentType.warning:
+      case ToastType.warning:
         return Assets.iconsWarning;
-      case ContentType.help:
+      case ToastType.help:
         return Assets.iconsHelp;
     }
   }
@@ -204,6 +206,5 @@ class AppToast extends StatelessWidget {
   static ColorFilter? _getColorFilter(
     ui.Color? color,
     ui.BlendMode colorBlendMode,
-  ) =>
-      color == null ? null : ui.ColorFilter.mode(color, colorBlendMode);
+  ) => color == null ? null : ui.ColorFilter.mode(color, colorBlendMode);
 }

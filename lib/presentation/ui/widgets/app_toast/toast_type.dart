@@ -1,36 +1,31 @@
 import 'package:acacia/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 
-enum ContentType {
-  help,
-  failure,
-  success,
-  warning,
-}
+enum ToastType { help, failure, success, warning }
 
-extension ContentTypeExtension on ContentType {
+extension ToastTypeExtension on ToastType {
   String get message {
     switch (this) {
-      case ContentType.help:
+      case ToastType.help:
         return 'help';
-      case ContentType.failure:
+      case ToastType.failure:
         return 'failure';
-      case ContentType.success:
+      case ToastType.success:
         return 'success';
-      case ContentType.warning:
+      case ToastType.warning:
         return 'warning';
     }
   }
 
   Color get color {
     switch (this) {
-      case ContentType.help:
+      case ToastType.help:
         return AppColors.pineTeal;
-      case ContentType.failure:
+      case ToastType.failure:
         return AppColors.error;
-      case ContentType.success:
+      case ToastType.success:
         return AppColors.darkFern;
-      case ContentType.warning:
+      case ToastType.warning:
         return AppColors.caramelTan;
     }
   }

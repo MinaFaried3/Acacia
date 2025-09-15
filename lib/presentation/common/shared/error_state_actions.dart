@@ -8,7 +8,7 @@ import 'package:acacia/data/network/dio_factory/dio_factory.dart';
 import 'package:acacia/data/network/error/app_failures.dart';
 import 'package:acacia/presentation/common/enums/ui_state.dart';
 import 'package:acacia/presentation/ui/widgets/app_toast/app_toast.dart';
-import 'package:acacia/presentation/ui/widgets/app_toast/content_type.dart';
+import 'package:acacia/presentation/ui/widgets/app_toast/toast_type.dart';
 import 'package:acacia/presentation/resources/strings_manager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
@@ -19,7 +19,7 @@ import 'base_state.dart';
 void errorStateActions(BuildContext context, BaseState state) {
   if (state.uiState.isFailed == false) return;
 
-  void showToast(String key, String? message, ContentType type) {
+  void showToast(String key, String? message, ToastType type) {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -28,7 +28,7 @@ void errorStateActions(BuildContext context, BaseState state) {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AppToast(
-          title: key.tr(), 
+          title: key.tr(),
           message: message ?? "",
           contentType: type,
         ),
@@ -38,74 +38,166 @@ void errorStateActions(BuildContext context, BaseState state) {
 
   switch (state.failure) {
     case null:
-      showToast(AppStrings.errorUnknown, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorUnknown,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case ServerFailure():
-      showToast(AppStrings.errorServer, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorServer,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case NotImplementedFailure():
-      showToast(AppStrings.errorNotImplemented, state.failure?.message, ContentType.warning);
+      showToast(
+        AppStrings.errorNotImplemented,
+        state.failure?.message,
+        ToastType.warning,
+      );
 
     case NoInternetConnectionFailure():
-      showToast(AppStrings.errorNoInternet, state.failure?.message ?? "تحقق من الاتصال", ContentType.warning);
+      showToast(
+        AppStrings.errorNoInternet,
+        state.failure?.message ?? "تحقق من الاتصال",
+        ToastType.warning,
+      );
 
     case InternalServerErrorFailure():
-      showToast(AppStrings.errorInternalServer, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorInternalServer,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case BadRequestFailure():
-      showToast(AppStrings.errorBadRequest, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorBadRequest,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case UnauthorizedFailure():
-      showToast(AppStrings.errorUnauthorized, "برجاء تسجيل الدخول مرة أخرى", ContentType.failure);
+      showToast(
+        AppStrings.errorUnauthorized,
+        "برجاء تسجيل الدخول مرة أخرى",
+        ToastType.failure,
+      );
       userLogoutAndNavigateToLogin(context);
 
     case PaymentRequiredFailure():
-      showToast(AppStrings.errorPaymentRequired, state.failure?.message, ContentType.warning);
+      showToast(
+        AppStrings.errorPaymentRequired,
+        state.failure?.message,
+        ToastType.warning,
+      );
 
     case ForbiddenFailure():
-      showToast(AppStrings.errorForbidden, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorForbidden,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case NotFoundFailure():
-      showToast(AppStrings.errorNotFound, state.failure?.message, ContentType.warning);
+      showToast(
+        AppStrings.errorNotFound,
+        state.failure?.message,
+        ToastType.warning,
+      );
 
     case UnprocessableEntityFailure():
-      showToast(AppStrings.errorUnprocessableEntity, state.failure?.message, ContentType.warning);
+      showToast(
+        AppStrings.errorUnprocessableEntity,
+        state.failure?.message,
+        ToastType.warning,
+      );
 
     case LocationFailure():
-      showToast(AppStrings.errorLocation, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorLocation,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case UnKnownFailure():
-      showToast(AppStrings.errorUnknown, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorUnknown,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case ConflictFailure():
-      showToast(AppStrings.errorConflict, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorConflict,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case TooManyRequestsFailure():
-      showToast(AppStrings.errorTooManyRequests, state.failure?.message, ContentType.warning);
+      showToast(
+        AppStrings.errorTooManyRequests,
+        state.failure?.message,
+        ToastType.warning,
+      );
 
     case PreconditionFailedFailure():
-      showToast(AppStrings.errorPreconditionFailed, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorPreconditionFailed,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case ResourceExhaustedFailure():
-      showToast(AppStrings.errorResourceExhausted, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorResourceExhausted,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case AbortedFailure():
-      showToast(AppStrings.errorAborted, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorAborted,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case DeadlineExceededFailure():
-      showToast(AppStrings.errorDeadlineExceeded, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorDeadlineExceeded,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case AlreadyExistsFailure():
-      showToast(AppStrings.errorAlreadyExists, state.failure?.message, ContentType.warning);
+      showToast(
+        AppStrings.errorAlreadyExists,
+        state.failure?.message,
+        ToastType.warning,
+      );
 
     case UnauthenticatedFailure():
-      showToast(AppStrings.errorUnauthenticated, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorUnauthenticated,
+        state.failure?.message,
+        ToastType.failure,
+      );
 
     case CancelFailure():
-      showToast(AppStrings.errorCancelled, state.failure?.message, ContentType.warning);
+      showToast(
+        AppStrings.errorCancelled,
+        state.failure?.message,
+        ToastType.warning,
+      );
 
     case ServiceUnavailableFailure():
-      showToast(AppStrings.errorServiceUnavailable, state.failure?.message, ContentType.failure);
+      showToast(
+        AppStrings.errorServiceUnavailable,
+        state.failure?.message,
+        ToastType.failure,
+      );
   }
 }
 
