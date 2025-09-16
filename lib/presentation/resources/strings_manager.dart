@@ -151,4 +151,28 @@ abstract class AppStrings {
   static const String whatsAppMessage = 'whatsapp-message';
   static const String emailSubject = 'email-subject';
   static const String emailBody = 'email-body';
+
+  // failures
+  static const String errorUnknown = 'error_unknown';
+  static const String errorServer = 'error_server';
+  static const String errorNotImplemented = 'error_not_implemented';
+  static const String errorNoInternet = 'error_no_internet';
+  static const String errorInternalServer = 'error_internal_server';
+  static const String errorBadRequest = 'error_bad_request';
+  static const String errorUnauthorized = 'error_unauthorized';
+  static const String errorPaymentRequired = 'error_payment_required';
+  static const String errorForbidden = 'error_forbidden';
+  static const String errorNotFound = 'error_not_found';
+  static const String errorUnprocessableEntity = 'error_unprocessable_entity';
+  static const String errorLocation = 'error_location';
+  static const String errorConflict = 'error_conflict';
+  static const String errorTooManyRequests = 'error_too_many_requests';
+  static const String errorPreconditionFailed = 'error_precondition_failed';
+  static const String errorResourceExhausted = 'error_resource_exhausted';
+  static const String errorAborted = 'error_aborted';
+  static const String errorDeadlineExceeded = 'error_deadline_exceeded';
+  static const String errorAlreadyExists = 'error_already_exists';
+  static const String errorUnauthenticated = 'error_unauthenticated';
+  static const String errorCancelled = 'error_cancelled';
+  static const String errorServiceUnavailable = 'error_service_unavailable';
 }

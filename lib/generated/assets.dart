@@ -2,6 +2,11 @@
 class Assets {
   Assets._();
 
+  static const String iconsBack = 'assets/Icons/back.svg';
+  static const String iconsFailure = 'assets/Icons/failure.svg';
+  static const String iconsHelp = 'assets/Icons/help.svg';
+  static const String iconsSuccess = 'assets/Icons/success.svg';
+  static const String iconsWarning = 'assets/Icons/warning.svg';
   static const String icons3dRotate = 'assets/icons/3d_rotate.svg';
   static const String icons3dSquare = 'assets/icons/3d_square.svg';
   static const String iconsAdd = 'assets/icons/add.svg';

@@ -2,95 +2,230 @@ import 'dart:io';
 
 import 'package:acacia/app/config/flavors/app_config.dart';
 import 'package:acacia/app/services/di/dependency_injection.dart';
-import 'package:acacia/app/shared/common/printer_manager.dart';
+// import 'package:acacia/app/shared/common/printer_manager.dart';
 import 'package:acacia/data/network/cache_on_subsequent_calls.dart';
 import 'package:acacia/data/network/dio_factory/dio_factory.dart';
 import 'package:acacia/data/network/error/app_failures.dart';
 import 'package:acacia/presentation/common/enums/ui_state.dart';
+import 'package:acacia/presentation/ui/widgets/app_toast/app_toast.dart';
+import 'package:acacia/presentation/ui/widgets/app_toast/toast_type.dart';
+import 'package:acacia/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 import 'base_state.dart';
+
+void showToast(
+  BuildContext context, {
+  required String key,
+  String? message,
+  required ToastType type,
+}) {
+  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      behavior: SnackBarBehavior.floating,
+      content: AppToast(
+        title: key.tr(),
+        message: message ?? "",
+        contentType: type,
+      ),
+    ),
+  );
+}
 
 void errorStateActions(BuildContext context, BaseState state) {
   if (state.uiState.isFailed == false) return;
 
   switch (state.failure) {
     case null:
-      printer('unKnown error');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorUnknown,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case ServerFailure():
-      printer('ServerFailure');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorServer,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case NotImplementedFailure():
-      printer('NotImplementedFailure');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorNotImplemented,
+        message: state.failure?.message,
+        type: ToastType.warning,
+      );
+
     case NoInternetConnectionFailure():
-      printer('NoInternetConnectionFailure');
-    //TODO handle not found for push named
-    // context.pushNamed(RoutesStrings.connectionRoute);
+      showToast(
+        context,
+        key: AppStrings.errorNoInternet,
+        message: state.failure?.message ?? "تحقق من الاتصال",
+        type: ToastType.warning,
+      );
+
     case InternalServerErrorFailure():
-      printer('InternalServerErrorFailure');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorInternalServer,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case BadRequestFailure():
-      printer('BadRequestFailure');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorBadRequest,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case UnauthorizedFailure():
-      printer('UnauthorizedFailure');
+      showToast(
+        context,
+        key: AppStrings.errorUnauthorized,
+        message: "برجاء تسجيل الدخول مرة أخرى",
+        type: ToastType.failure,
+      );
       userLogoutAndNavigateToLogin(context);
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+
     case PaymentRequiredFailure():
-      printer('PaymentRequiredFailure');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorPaymentRequired,
+        message: state.failure?.message,
+        type: ToastType.warning,
+      );
+
     case ForbiddenFailure():
-      printer('ForbiddenFailure');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorForbidden,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case NotFoundFailure():
-      printer('NotFoundFailure');
-    //TODO handle not found for push named
-    // context.pushNamed(
-    //   RoutesStrings.notFound404Route,
-    //   extra: (state.failure?.message).fromNullToEmpty,
-    // );
+      showToast(
+        context,
+        key: AppStrings.errorNotFound,
+        message: state.failure?.message,
+        type: ToastType.warning,
+      );
+
     case UnprocessableEntityFailure():
-      printer('UnprocessableEntityFailure');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorUnprocessableEntity,
+        message: state.failure?.message,
+        type: ToastType.warning,
+      );
+
     case LocationFailure():
-      printer(state.failure?.message, color: ConsoleColor.redBg);
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorLocation,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case UnKnownFailure():
-      printer('UnKnownFailure');
-    // CustomSnackBar.show(context, (state.failure?.message).fromNullToEmpty);
+      showToast(
+        context,
+        key: AppStrings.errorUnknown,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case ConflictFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorConflict,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case TooManyRequestsFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorTooManyRequests,
+        message: state.failure?.message,
+        type: ToastType.warning,
+      );
+
     case PreconditionFailedFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorPreconditionFailed,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case ResourceExhaustedFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorResourceExhausted,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case AbortedFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorAborted,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case DeadlineExceededFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorDeadlineExceeded,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case AlreadyExistsFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorAlreadyExists,
+        message: state.failure?.message,
+        type: ToastType.warning,
+      );
+
     case UnauthenticatedFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorUnauthenticated,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
+
     case CancelFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorCancelled,
+        message: state.failure?.message,
+        type: ToastType.warning,
+      );
+
     case ServiceUnavailableFailure():
-      // TODO: Handle this case.
-      throw UnimplementedError();
+      showToast(
+        context,
+        key: AppStrings.errorServiceUnavailable,
+        message: state.failure?.message,
+        type: ToastType.failure,
+      );
   }
 }
 
